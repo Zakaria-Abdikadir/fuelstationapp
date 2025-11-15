@@ -1,0 +1,255 @@
+{
+  "@@locale": "en",
+  "appTitle": "Fuel Station App",
+  "appName": "Fuel Station",
+  "appTagline": "Your Digital Fuel Solution",
+  "navHome": "Home",
+  "navFuel": "Fuel",
+  "navPayment": "Payment",
+  "navDashboard": "Dashboard",
+  "navManageStations": "Manage Stations",
+  "navManagePrices": "Manage Prices",
+  "navReports": "Reports",
+  "navSettings": "Settings",
+  "commonCancel": "Cancel",
+  "commonClose": "Close",
+  "commonSave": "Save",
+  "commonDone": "Done",
+  "commonRefresh": "Refresh",
+  "commonSelect": "Select",
+  "commonLogout": "Logout",
+  "commonClear": "Clear",
+  "commonPrint": "Print",
+  "commonViewReceipt": "View Receipt",
+  "commonName": "Name",
+  "commonEmail": "Email",
+  "commonContinue": "Continue",
+  "settingsTitle": "Settings",
+  "settingsSectionGeneral": "General",
+  "settingsSectionData": "Data",
+  "settingsSectionAbout": "About",
+  "settingsNotificationsTitle": "Notifications",
+  "settingsNotificationsSubtitle": "Enable or disable notifications",
+  "settingsLanguageTitle": "Language",
+  "settingsThemeTitle": "Theme",
+  "settingsBackupTitle": "Backup Data",
+  "settingsBackupSubtitle": "Backup your data to cloud",
+  "settingsRestoreTitle": "Restore Data",
+  "settingsRestoreSubtitle": "Restore data from backup",
+  "settingsClearCacheTitle": "Clear Cache",
+  "settingsClearCacheSubtitle": "Clear app cache and temporary files",
+  "settingsAppVersionTitle": "App Version",
+  "settingsTermsTitle": "Terms & Conditions",
+  "settingsTermsSubtitle": "Read our terms and conditions",
+  "settingsPrivacyTitle": "Privacy Policy",
+  "settingsPrivacySubtitle": "Read our privacy policy",
+  "settingsLanguageDialogTitle": "Select Language",
+  "settingsThemeDialogTitle": "Select Theme",
+  "settingsProfileEditTitle": "Edit Profile",
+  "settingsProfileFillAllFields": "Please fill all fields",
+  "settingsProfileUpdated": "Profile updated successfully",
+  "settingsProfilePhotoUpdated": "Profile photo updated",
+  "settingsProfilePhotoError": "Couldn't update profile photo",
+  "settingsChangePhoto": "Change photo",
+  "settingsLanguageChanged": "Language changed to {language}. Setting saved successfully.",
+  "@settingsLanguageChanged": {
+    "placeholders": {
+      "language": {
+        "type": "String"
+      }
+    }
+  },
+  "settingsThemeChanged": "Theme changed to {theme}",
+  "@settingsThemeChanged": {
+    "placeholders": {
+      "theme": {
+        "type": "String"
+      }
+    }
+  },
+  "settingsLogoutDialogTitle": "Logout",
+  "settingsLogoutDialogMessage": "Are you sure you want to logout?",
+  "settingsLogoutSuccess": "Logged out successfully",
+  "settingsClearCacheDialogTitle": "Clear Cache",
+  "settingsClearCacheDialogMessage": "Are you sure you want to clear all cache?",
+  "settingsClearCacheSuccess": "Cache cleared successfully",
+  "settingsBackupSuccess": "Backup saved to {path}",
+  "@settingsBackupSuccess": {
+    "placeholders": {
+      "path": {
+        "type": "String"
+      }
+    }
+  },
+  "settingsBackupError": "Backup failed: {error}",
+  "@settingsBackupError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "settingsRestoreSuccess": "Data restored successfully.",
+  "settingsRestoreError": "Restore failed: {error}",
+  "@settingsRestoreError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "languageEnglish": "English",
+  "languageSwahili": "Swahili",
+  "languageFrench": "French",
+  "languageSpanish": "Spanish",
+  "themeLight": "Light",
+  "themeDark": "Dark",
+  "themeSystem": "System",
+  "termsAndConditionsTitle": "Terms & Conditions",
+  "termsAndConditionsBody": "1. Acceptance of Terms\nBy using this Fuel Station App, you agree to be bound by these Terms and Conditions.\n\n2. Use of Service\nThe app is provided for fuel purchase and management purposes only.\n\n3. User Responsibilities\n- Users must provide accurate information\n- Users are responsible for maintaining account security\n- Users must comply with all applicable laws\n\n4. Limitation of Liability\nThe app provider is not liable for any damages arising from the use of this service.\n\n5. Modifications\nWe reserve the right to modify these terms at any time.\n\nLast updated: {year}",
+  "@termsAndConditionsBody": {
+    "placeholders": {
+      "year": {
+        "type": "int"
+      }
+    }
+  },
+  "privacyPolicyTitle": "Privacy Policy",
+  "privacyPolicyBody": "Privacy Policy\n\n1. Information We Collect\n- Personal information (name, email)\n- Location data for finding nearby stations\n- Purchase history and preferences\n\n2. How We Use Your Information\n- To provide and improve our services\n- To process transactions\n- To send important notifications\n\n3. Data Security\nWe implement appropriate security measures to protect your personal information.\n\n4. Data Sharing\nWe do not sell your personal information. We may share data only for service provision.\n\n5. Your Rights\n- Access your personal data\n- Request data deletion\n- Update your information\n\n6. Contact Us\nFor privacy concerns, contact us at privacy@fuelstation.com\n\nLast updated: {year}",
+  "@privacyPolicyBody": {
+    "placeholders": {
+      "year": {
+        "type": "int"
+      }
+    }
+  },
+  "homeTitle": "Find Fuel Stations",
+  "homeSearchHint": "Search stations or locations...",
+  "homeNearbyStations": "Nearby Stations",
+  "homeStationsFound": "{count, plural, =0 {No stations found} one {{count} station found} other {{count} stations found}}",
+  "@homeStationsFound": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "homeNoStationsFound": "No stations found nearby",
+  "homeRefresh": "Refresh",
+  "homeErrorLocationServicesDisabled": "Location services are disabled. Please enable them.",
+  "homeErrorLocationDenied": "Location permissions are denied.",
+  "homeErrorLocationDeniedForever": "Location permissions are permanently denied.",
+  "homeErrorGettingLocation": "Error getting location: {error}",
+  "@homeErrorGettingLocation": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "homeErrorLoadingStations": "Error loading stations: {error}",
+  "@homeErrorLoadingStations": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "homeNoStationsFoundAction": "Refresh",
+  "stationDistanceAway": "{distance} km away",
+  "@stationDistanceAway": {
+    "placeholders": {
+      "distance": {
+        "type": "String"
+      }
+    }
+  },
+  "stationClosedLabel": "Closed",
+  "stationSelectButton": "Select",
+  "fuelTypePetrol": "Petrol",
+  "fuelTypeDiesel": "Diesel",
+  "fuelSelectFuelType": "Select Fuel Type",
+  "fuelEnterQuantity": "Enter Quantity",
+  "fuelChoiceAmount": "Amount (KES)",
+  "fuelChoiceLiters": "Liters (L)",
+  "fuelInputAmountLabel": "Amount (KES)",
+  "fuelInputLitersLabel": "Liters (L)",
+  "fuelInputAmountHint": "Enter amount",
+  "fuelInputLitersHint": "Enter liters",
+  "fuelPricePerLiterLabel": "Price per Liter:",
+  "fuelLitersLabel": "Liters:",
+  "fuelAmountLabel": "Amount:",
+  "fuelTotalLabel": "Total:",
+  "fuelInProgressTitle": "Fueling in Progress...",
+  "fuelStopButton": "Stop Fueling",
+  "fuelStartButton": "Start Fueling",
+  "fuelErrorEnterAmountOrLiters": "Please enter amount or liters",
+  "fuelPumpStatus": "Pump: {status}",
+  "@fuelPumpStatus": {
+    "placeholders": {
+      "status": {
+        "type": "String"
+      }
+    }
+  },
+  "pumpStatusIdle": "Idle",
+  "pumpStatusBusy": "Busy",
+  "pumpStatusInUse": "In Use",
+  "paymentTitle": "Payment",
+  "paymentSummaryTitle": "Transaction Summary",
+  "paymentSummaryStation": "Station",
+  "paymentSummaryFuelType": "Fuel Type",
+  "paymentSummaryQuantity": "Quantity",
+  "paymentSummaryPricePerLiter": "Price per Liter",
+  "paymentSummaryTotalLabel": "Total Amount:",
+  "paymentMethodTitle": "Select Payment Method",
+  "paymentMethodMpesa": "M-Pesa",
+  "paymentMethodCard": "Card",
+  "paymentMethodCash": "Cash",
+  "paymentButtonPayNow": "Pay Now",
+  "paymentProcessing": "Processing...",
+  "paymentError": "Payment failed: {error}",
+  "@paymentError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "paymentSuccessAppBarTitle": "Payment Successful",
+  "paymentSuccessTitle": "Payment Completed Successfully!",
+  "paymentSuccessButtonViewReceipt": "View Receipt",
+  "paymentSuccessButtonDone": "Done",
+  "paymentReceiptTitle": "Receipt",
+  "paymentReceiptTransactionId": "Transaction ID",
+  "paymentReceiptDate": "Date",
+  "paymentReceiptFuelType": "Fuel Type",
+  "paymentReceiptQuantity": "Quantity",
+  "paymentReceiptPricePerLiter": "Price per Liter",
+  "paymentReceiptTotalAmount": "Total Amount",
+  "paymentReceiptPaymentMethod": "Payment Method",
+  "paymentReceiptSuccessMessage": "Payment Successful",
+  "paymentReceiptSuccessTagline": "Payment Successful",
+  "paymentReceiptPrinted": "Receipt printed successfully",
+  "mainPlaceholderFuelTitle": "Fuel",
+  "mainPlaceholderFuelMessage": "Please select a station from Home",
+  "mainPlaceholderPaymentTitle": "Payment",
+  "mainPlaceholderPaymentMessage": "Complete a fueling session to proceed",
+  "dashboardTitle": "Dashboard",
+  "dashboardPeriodToday": "Today",
+  "dashboardPeriodWeek": "This Week",
+  "dashboardPeriodMonth": "This Month",
+  "dashboardStatTotalSales": "Total Sales",
+  "dashboardStatFuelDispensed": "Fuel Dispensed",
+  "dashboardStatReceipts": "Receipts",
+  "dashboardStatTransactions": "Transactions",
+  "dashboardSalesPerformanceTitle": "Sales Performance",
+  "dashboardSalesPerformanceEmpty": "No sales data available",
+  "dashboardRecentTransactionsTitle": "Recent Transactions",
+  "dashboardRecentTransactionsEmpty": "No recent transactions",
+  "dashboardQuickActionsTitle": "Quick Actions",
+  "dashboardQuickActionManageStations": "Manage Stations",
+  "dashboardQuickActionUpdatePrices": "Update Prices",
+  "receiptPaymentSuccessfulBanner": "Payment Successful"
+}
+

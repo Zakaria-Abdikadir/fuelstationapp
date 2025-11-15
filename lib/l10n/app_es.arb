@@ -1,0 +1,255 @@
+{
+  "@@locale": "es",
+  "appTitle": "Aplicación Estación de Combustible",
+  "appName": "Estación de Combustible",
+  "appTagline": "Tu solución digital de combustible",
+  "navHome": "Inicio",
+  "navFuel": "Combustible",
+  "navPayment": "Pago",
+  "navDashboard": "Tablero",
+  "navManageStations": "Gestionar estaciones",
+  "navManagePrices": "Gestionar precios",
+  "navReports": "Reportes",
+  "navSettings": "Configuración",
+  "commonCancel": "Cancelar",
+  "commonClose": "Cerrar",
+  "commonSave": "Guardar",
+  "commonDone": "Listo",
+  "commonRefresh": "Actualizar",
+  "commonSelect": "Seleccionar",
+  "commonLogout": "Cerrar sesión",
+  "commonClear": "Limpiar",
+  "commonPrint": "Imprimir",
+  "commonViewReceipt": "Ver recibo",
+  "commonName": "Nombre",
+  "commonEmail": "Correo electrónico",
+  "commonContinue": "Continuar",
+  "settingsTitle": "Configuración",
+  "settingsSectionGeneral": "General",
+  "settingsSectionData": "Datos",
+  "settingsSectionAbout": "Acerca de",
+  "settingsNotificationsTitle": "Notificaciones",
+  "settingsNotificationsSubtitle": "Activar o desactivar notificaciones",
+  "settingsLanguageTitle": "Idioma",
+  "settingsThemeTitle": "Tema",
+  "settingsBackupTitle": "Respaldar datos",
+  "settingsBackupSubtitle": "Respaldar tus datos en la nube",
+  "settingsRestoreTitle": "Restaurar datos",
+  "settingsRestoreSubtitle": "Restaurar datos desde un respaldo",
+  "settingsClearCacheTitle": "Limpiar caché",
+  "settingsClearCacheSubtitle": "Limpiar caché y archivos temporales",
+  "settingsAppVersionTitle": "Versión de la aplicación",
+  "settingsTermsTitle": "Términos y condiciones",
+  "settingsTermsSubtitle": "Lee nuestros términos y condiciones",
+  "settingsPrivacyTitle": "Política de privacidad",
+  "settingsPrivacySubtitle": "Lee nuestra política de privacidad",
+  "settingsLanguageDialogTitle": "Seleccionar idioma",
+  "settingsThemeDialogTitle": "Seleccionar tema",
+  "settingsProfileEditTitle": "Editar perfil",
+  "settingsProfileFillAllFields": "Por favor completa todos los campos",
+  "settingsProfileUpdated": "Perfil actualizado correctamente",
+  "settingsProfilePhotoUpdated": "Foto de perfil actualizada",
+  "settingsProfilePhotoError": "No se pudo actualizar la foto de perfil",
+  "settingsChangePhoto": "Cambiar foto",
+  "settingsLanguageChanged": "El idioma cambió a {language}. Ajuste guardado.",
+  "@settingsLanguageChanged": {
+    "placeholders": {
+      "language": {
+        "type": "String"
+      }
+    }
+  },
+  "settingsThemeChanged": "El tema cambió a {theme}",
+  "@settingsThemeChanged": {
+    "placeholders": {
+      "theme": {
+        "type": "String"
+      }
+    }
+  },
+  "settingsLogoutDialogTitle": "Cerrar sesión",
+  "settingsLogoutDialogMessage": "¿Seguro que deseas cerrar sesión?",
+  "settingsLogoutSuccess": "Sesión cerrada correctamente",
+  "settingsClearCacheDialogTitle": "Limpiar caché",
+  "settingsClearCacheDialogMessage": "¿Seguro que deseas limpiar todo el caché?",
+  "settingsClearCacheSuccess": "Caché limpiado correctamente",
+  "settingsBackupSuccess": "Respaldo guardado en {path}",
+  "@settingsBackupSuccess": {
+    "placeholders": {
+      "path": {
+        "type": "String"
+      }
+    }
+  },
+  "settingsBackupError": "Error al crear el respaldo: {error}",
+  "@settingsBackupError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "settingsRestoreSuccess": "Datos restaurados correctamente.",
+  "settingsRestoreError": "No se pudo restaurar: {error}",
+  "@settingsRestoreError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "languageEnglish": "Inglés",
+  "languageSwahili": "Suajili",
+  "languageFrench": "Francés",
+  "languageSpanish": "Español",
+  "themeLight": "Claro",
+  "themeDark": "Oscuro",
+  "themeSystem": "Sistema",
+  "termsAndConditionsTitle": "Términos y condiciones",
+  "termsAndConditionsBody": "1. Aceptación de los términos\nAl usar esta Aplicación Estación de Combustible, aceptas estar sujeto a estos Términos y Condiciones.\n\n2. Uso del servicio\nLa aplicación se proporciona únicamente para la compra y gestión de combustible.\n\n3. Responsabilidades del usuario\n- Los usuarios deben proporcionar información precisa\n- Los usuarios son responsables de la seguridad de su cuenta\n- Los usuarios deben cumplir con todas las leyes aplicables\n\n4. Limitación de responsabilidad\nEl proveedor de la aplicación no se hace responsable de los daños que surjan del uso de este servicio.\n\n5. Modificaciones\nNos reservamos el derecho de modificar estos términos en cualquier momento.\n\nÚltima actualización: {year}",
+  "@termsAndConditionsBody": {
+    "placeholders": {
+      "year": {
+        "type": "int"
+      }
+    }
+  },
+  "privacyPolicyTitle": "Política de privacidad",
+  "privacyPolicyBody": "Política de privacidad\n\n1. Información que recopilamos\n- Información personal (nombre, correo electrónico)\n- Datos de ubicación para encontrar estaciones cercanas\n- Historial de compras y preferencias\n\n2. Cómo usamos tu información\n- Para proporcionar y mejorar nuestros servicios\n- Para procesar transacciones\n- Para enviar notificaciones importantes\n\n3. Seguridad de datos\nImplementamos medidas de seguridad adecuadas para proteger tu información personal.\n\n4. Compartir datos\nNo vendemos tu información personal. Podemos compartir datos solo para la prestación del servicio.\n\n5. Tus derechos\n- Acceder a tus datos personales\n- Solicitar la eliminación de datos\n- Actualizar tu información\n\n6. Contáctanos\nPara inquietudes de privacidad, contáctanos en privacy@fuelstation.com\n\nÚltima actualización: {year}",
+  "@privacyPolicyBody": {
+    "placeholders": {
+      "year": {
+        "type": "int"
+      }
+    }
+  },
+  "homeTitle": "Buscar estaciones de combustible",
+  "homeSearchHint": "Busca estaciones o ubicaciones...",
+  "homeNearbyStations": "Estaciones cercanas",
+  "homeStationsFound": "{count, plural, =0 {No se encontraron estaciones} one {Se encontró {count} estación} other {Se encontraron {count} estaciones}}",
+  "@homeStationsFound": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "homeNoStationsFound": "No se encontraron estaciones cercanas",
+  "homeRefresh": "Actualizar",
+  "homeErrorLocationServicesDisabled": "Los servicios de ubicación están desactivados. Por favor actívalos.",
+  "homeErrorLocationDenied": "Los permisos de ubicación fueron denegados.",
+  "homeErrorLocationDeniedForever": "Los permisos de ubicación fueron denegados permanentemente.",
+  "homeErrorGettingLocation": "Error al obtener la ubicación: {error}",
+  "@homeErrorGettingLocation": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "homeErrorLoadingStations": "Error al cargar las estaciones: {error}",
+  "@homeErrorLoadingStations": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "homeNoStationsFoundAction": "Actualizar",
+  "stationDistanceAway": "A {distance} km",
+  "@stationDistanceAway": {
+    "placeholders": {
+      "distance": {
+        "type": "String"
+      }
+    }
+  },
+  "stationClosedLabel": "Cerrado",
+  "stationSelectButton": "Seleccionar",
+  "fuelTypePetrol": "Gasolina",
+  "fuelTypeDiesel": "Diésel",
+  "fuelSelectFuelType": "Seleccionar tipo de combustible",
+  "fuelEnterQuantity": "Ingresar cantidad",
+  "fuelChoiceAmount": "Monto (KES)",
+  "fuelChoiceLiters": "Litros (L)",
+  "fuelInputAmountLabel": "Monto (KES)",
+  "fuelInputLitersLabel": "Litros (L)",
+  "fuelInputAmountHint": "Ingresa el monto",
+  "fuelInputLitersHint": "Ingresa los litros",
+  "fuelPricePerLiterLabel": "Precio por litro:",
+  "fuelLitersLabel": "Litros:",
+  "fuelAmountLabel": "Monto:",
+  "fuelTotalLabel": "Total:",
+  "fuelInProgressTitle": "Suministro en progreso...",
+  "fuelStopButton": "Detener suministro",
+  "fuelStartButton": "Iniciar suministro",
+  "fuelErrorEnterAmountOrLiters": "Por favor ingresa monto o litros",
+  "fuelPumpStatus": "Bomba: {status}",
+  "@fuelPumpStatus": {
+    "placeholders": {
+      "status": {
+        "type": "String"
+      }
+    }
+  },
+  "pumpStatusIdle": "Libre",
+  "pumpStatusBusy": "Ocupada",
+  "pumpStatusInUse": "En uso",
+  "paymentTitle": "Pago",
+  "paymentSummaryTitle": "Resumen de la transacción",
+  "paymentSummaryStation": "Estación",
+  "paymentSummaryFuelType": "Tipo de combustible",
+  "paymentSummaryQuantity": "Cantidad",
+  "paymentSummaryPricePerLiter": "Precio por litro",
+  "paymentSummaryTotalLabel": "Monto total:",
+  "paymentMethodTitle": "Seleccionar método de pago",
+  "paymentMethodMpesa": "M-Pesa",
+  "paymentMethodCard": "Tarjeta",
+  "paymentMethodCash": "Efectivo",
+  "paymentButtonPayNow": "Pagar ahora",
+  "paymentProcessing": "Procesando...",
+  "paymentError": "El pago falló: {error}",
+  "@paymentError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "paymentSuccessAppBarTitle": "Pago exitoso",
+  "paymentSuccessTitle": "¡Pago completado con éxito!",
+  "paymentSuccessButtonViewReceipt": "Ver recibo",
+  "paymentSuccessButtonDone": "Listo",
+  "paymentReceiptTitle": "Recibo",
+  "paymentReceiptTransactionId": "ID de transacción",
+  "paymentReceiptDate": "Fecha",
+  "paymentReceiptFuelType": "Tipo de combustible",
+  "paymentReceiptQuantity": "Cantidad",
+  "paymentReceiptPricePerLiter": "Precio por litro",
+  "paymentReceiptTotalAmount": "Monto total",
+  "paymentReceiptPaymentMethod": "Método de pago",
+  "paymentReceiptSuccessMessage": "Pago exitoso",
+  "paymentReceiptSuccessTagline": "Pago exitoso",
+  "paymentReceiptPrinted": "Recibo impreso correctamente",
+  "mainPlaceholderFuelTitle": "Combustible",
+  "mainPlaceholderFuelMessage": "Selecciona una estación desde Inicio",
+  "mainPlaceholderPaymentTitle": "Pago",
+  "mainPlaceholderPaymentMessage": "Completa una sesión de suministro para continuar",
+  "dashboardTitle": "Tablero",
+  "dashboardPeriodToday": "Hoy",
+  "dashboardPeriodWeek": "Esta semana",
+  "dashboardPeriodMonth": "Este mes",
+  "dashboardStatTotalSales": "Ventas totales",
+  "dashboardStatFuelDispensed": "Combustible suministrado",
+  "dashboardStatReceipts": "Recibos",
+  "dashboardStatTransactions": "Transacciones",
+  "dashboardSalesPerformanceTitle": "Desempeño de ventas",
+  "dashboardSalesPerformanceEmpty": "No hay datos de ventas disponibles",
+  "dashboardRecentTransactionsTitle": "Transacciones recientes",
+  "dashboardRecentTransactionsEmpty": "No hay transacciones recientes",
+  "dashboardQuickActionsTitle": "Acciones rápidas",
+  "dashboardQuickActionManageStations": "Gestionar estaciones",
+  "dashboardQuickActionUpdatePrices": "Actualizar precios",
+  "receiptPaymentSuccessfulBanner": "Pago exitoso"
+}
+

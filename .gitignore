@@ -1,0 +1,16 @@
+# Flutter/Dart/Pub
+.dart_tool/
+.packages
+.pub-cache/
+.pub/
+build/
+ios/Flutter/Flutter.podspec
+ios/Pods/
+ios/Runner.xcworkspace/
+.idea/
+.vscode/
+*.iml
+*.log
+*.lock
+*.swp
+*.DS_Store

@@ -1,0 +1,255 @@
+{
+  "@@locale": "sw",
+  "appTitle": "Programu ya Kituo cha Mafuta",
+  "appName": "Kituo cha Mafuta",
+  "appTagline": "Suluhisho lako la Kidijitali la Mafuta",
+  "navHome": "Mwanzo",
+  "navFuel": "Mafuta",
+  "navPayment": "Malipo",
+  "navDashboard": "Dashibodi",
+  "navManageStations": "Dhibiti Vituo",
+  "navManagePrices": "Sasisha Bei",
+  "navReports": "Ripoti",
+  "navSettings": "Mipangilio",
+  "commonCancel": "Ghairi",
+  "commonClose": "Funga",
+  "commonSave": "Hifadhi",
+  "commonDone": "Imekamilika",
+  "commonRefresh": "Onyesha upya",
+  "commonSelect": "Chagua",
+  "commonLogout": "Toka",
+  "commonClear": "Futa",
+  "commonPrint": "Chapisha",
+  "commonViewReceipt": "Tazama Risiti",
+  "commonName": "Jina",
+  "commonEmail": "Barua pepe",
+  "commonContinue": "Endelea",
+  "settingsTitle": "Mipangilio",
+  "settingsSectionGeneral": "Jumla",
+  "settingsSectionData": "Data",
+  "settingsSectionAbout": "Kuhusu",
+  "settingsNotificationsTitle": "Arifa",
+  "settingsNotificationsSubtitle": "Washa au zima arifa",
+  "settingsLanguageTitle": "Lugha",
+  "settingsThemeTitle": "Mandhari",
+  "settingsBackupTitle": "Hifadhi Nakala ya Data",
+  "settingsBackupSubtitle": "Hifadhi data yako kwenye wingu",
+  "settingsRestoreTitle": "Rejesha Data",
+  "settingsRestoreSubtitle": "Rejesha data kutoka kwenye nakala",
+  "settingsClearCacheTitle": "Futa Kache",
+  "settingsClearCacheSubtitle": "Futa kache na faili za muda za programu",
+  "settingsAppVersionTitle": "Toleo la Programu",
+  "settingsTermsTitle": "Sheria na Masharti",
+  "settingsTermsSubtitle": "Soma sheria na masharti yetu",
+  "settingsPrivacyTitle": "Sera ya Faragha",
+  "settingsPrivacySubtitle": "Soma sera yetu ya faragha",
+  "settingsLanguageDialogTitle": "Chagua Lugha",
+  "settingsThemeDialogTitle": "Chagua Mandhari",
+  "settingsProfileEditTitle": "Hariri Wasifu",
+  "settingsProfileFillAllFields": "Tafadhali jaza maeneo yote",
+  "settingsProfileUpdated": "Wasifu umeboreshwa kwa mafanikio",
+  "settingsProfilePhotoUpdated": "Picha ya wasifu imesasishwa",
+  "settingsProfilePhotoError": "Imeshindikana kusasisha picha ya wasifu",
+  "settingsChangePhoto": "Badilisha picha",
+  "settingsLanguageChanged": "Lugha imebadilishwa kuwa {language}. Mpangilio umehifadhiwa.",
+  "@settingsLanguageChanged": {
+    "placeholders": {
+      "language": {
+        "type": "String"
+      }
+    }
+  },
+  "settingsThemeChanged": "Mandhari imebadilishwa kuwa {theme}",
+  "@settingsThemeChanged": {
+    "placeholders": {
+      "theme": {
+        "type": "String"
+      }
+    }
+  },
+  "settingsLogoutDialogTitle": "Toka",
+  "settingsLogoutDialogMessage": "Una uhakika unataka kutoka?",
+  "settingsLogoutSuccess": "Umetoka kwa mafanikio",
+  "settingsClearCacheDialogTitle": "Futa Kache",
+  "settingsClearCacheDialogMessage": "Una uhakika unataka kufuta kache yote?",
+  "settingsClearCacheSuccess": "Kache imefutwa kwa mafanikio",
+  "settingsBackupSuccess": "Nakala imehifadhiwa kwenye {path}",
+  "@settingsBackupSuccess": {
+    "placeholders": {
+      "path": {
+        "type": "String"
+      }
+    }
+  },
+  "settingsBackupError": "Kuhifadhi nakala kimeshindwa: {error}",
+  "@settingsBackupError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "settingsRestoreSuccess": "Data imerejeshwa kwa mafanikio.",
+  "settingsRestoreError": "Kurejesha kimeshindwa: {error}",
+  "@settingsRestoreError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "languageEnglish": "Kiingereza",
+  "languageSwahili": "Kiswahili",
+  "languageFrench": "Kifaransa",
+  "languageSpanish": "Kihispania",
+  "themeLight": "Nuru",
+  "themeDark": "Giza",
+  "themeSystem": "Mfumo",
+  "termsAndConditionsTitle": "Sheria na Masharti",
+  "termsAndConditionsBody": "1. Kukubalika kwa Sheria\nKwa kutumia Programu hii ya Kituo cha Mafuta, unakubali kufungwa na Sheria na Masharti haya.\n\n2. Matumizi ya Huduma\nProgramu hii imetolewa kwa ajili ya ununuzi wa mafuta na usimamizi pekee.\n\n3. Wajibu wa Mtumiaji\n- Watumiaji wanapaswa kutoa taarifa sahihi\n- Watumiaji wanawajibika kulinda usalama wa akaunti\n- Watumiaji lazima watii sheria zote zinazohusika\n\n4. Kiasi cha Uwajibikaji\nMtoa programu hayawajibiki kwa madhara yoyote yanayotokana na matumizi ya huduma hii.\n\n5. Mabadiliko\nTunahifadhi haki ya kubadilisha sheria hizi wakati wowote.\n\nImesasishwa mwisho: {year}",
+  "@termsAndConditionsBody": {
+    "placeholders": {
+      "year": {
+        "type": "int"
+      }
+    }
+  },
+  "privacyPolicyTitle": "Sera ya Faragha",
+  "privacyPolicyBody": "Sera ya Faragha\n\n1. Taarifa Tunazokusanya\n- Taarifa binafsi (jina, barua pepe)\n- Data ya eneo kwa ajili ya kupata vituo vilivyo karibu\n- Historia ya ununuzi na mapendeleo\n\n2. Jinsi Tunavyotumia Taarifa Zako\n- Kutoa na kuboresha huduma zetu\n- Kuchakata miamala\n- Kutuma arifa muhimu\n\n3. Usalama wa Data\nTunatumia hatua zinazofaa za usalama kulinda taarifa zako binafsi.\n\n4. Kushiriki Data\nHatuzui taarifa zako binafsi. Tunaweza kushiriki data kwa ajili ya utoaji huduma pekee.\n\n5. Haki Zako\n- Kufikia data zako binafsi\n- Kuomba kufutwa kwa data\n- Kusasisha taarifa zako\n\n6. Wasiliana Nasi\nKwa masuala ya faragha, wasiliana nasi kupitia privacy@fuelstation.com\n\nImesasishwa mwisho: {year}",
+  "@privacyPolicyBody": {
+    "placeholders": {
+      "year": {
+        "type": "int"
+      }
+    }
+  },
+  "homeTitle": "Tafuta Vituo vya Mafuta",
+  "homeSearchHint": "Tafuta vituo au maeneo...",
+  "homeNearbyStations": "Vituo Vilivyo Karibu",
+  "homeStationsFound": "{count, plural, =0 {Hakuna vituo vilivyopatikana} one {Kituo {count} kimepatikana} other {Vituo {count} vimepatikana}}",
+  "@homeStationsFound": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "homeNoStationsFound": "Hakuna vituo vilivyo karibu",
+  "homeRefresh": "Onyesha upya",
+  "homeErrorLocationServicesDisabled": "Huduma za eneo zimezimwa. Tafadhali ziwashe.",
+  "homeErrorLocationDenied": "Ruhusa za eneo zimekataliwa.",
+  "homeErrorLocationDeniedForever": "Ruhusa za eneo zimekataliwa kabisa.",
+  "homeErrorGettingLocation": "Hitilafu katika kupata eneo: {error}",
+  "@homeErrorGettingLocation": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "homeErrorLoadingStations": "Hitilafu katika kupakia vituo: {error}",
+  "@homeErrorLoadingStations": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "homeNoStationsFoundAction": "Onyesha upya",
+  "stationDistanceAway": "{distance} km kutoka",
+  "@stationDistanceAway": {
+    "placeholders": {
+      "distance": {
+        "type": "String"
+      }
+    }
+  },
+  "stationClosedLabel": "Imefungwa",
+  "stationSelectButton": "Chagua",
+  "fuelTypePetrol": "Petroli",
+  "fuelTypeDiesel": "Dizeli",
+  "fuelSelectFuelType": "Chagua Aina ya Mafuta",
+  "fuelEnterQuantity": "Ingiza Kiasi",
+  "fuelChoiceAmount": "Kiasi (KES)",
+  "fuelChoiceLiters": "Lita (L)",
+  "fuelInputAmountLabel": "Kiasi (KES)",
+  "fuelInputLitersLabel": "Lita (L)",
+  "fuelInputAmountHint": "Ingiza kiasi",
+  "fuelInputLitersHint": "Ingiza lita",
+  "fuelPricePerLiterLabel": "Bei kwa Lita:",
+  "fuelLitersLabel": "Lita:",
+  "fuelAmountLabel": "Kiasi:",
+  "fuelTotalLabel": "Jumla:",
+  "fuelInProgressTitle": "Kumimina Mafuta Kunaendelea...",
+  "fuelStopButton": "Simamisha Kumimina",
+  "fuelStartButton": "Anza Kumimina",
+  "fuelErrorEnterAmountOrLiters": "Tafadhali ingiza kiasi au lita",
+  "fuelPumpStatus": "Pampu: {status}",
+  "@fuelPumpStatus": {
+    "placeholders": {
+      "status": {
+        "type": "String"
+      }
+    }
+  },
+  "pumpStatusIdle": "Haifanyi kazi",
+  "pumpStatusBusy": "Ina kazi",
+  "pumpStatusInUse": "Inaendelea",
+  "paymentTitle": "Malipo",
+  "paymentSummaryTitle": "Muhtasari wa Muamala",
+  "paymentSummaryStation": "Kituo",
+  "paymentSummaryFuelType": "Aina ya Mafuta",
+  "paymentSummaryQuantity": "Kiasi",
+  "paymentSummaryPricePerLiter": "Bei kwa Lita",
+  "paymentSummaryTotalLabel": "Jumla ya Malipo:",
+  "paymentMethodTitle": "Chagua Njia ya Malipo",
+  "paymentMethodMpesa": "M-Pesa",
+  "paymentMethodCard": "Kadi",
+  "paymentMethodCash": "Fedha taslimu",
+  "paymentButtonPayNow": "Lipa Sasa",
+  "paymentProcessing": "Inachakata...",
+  "paymentError": "Malipo yameshindwa: {error}",
+  "@paymentError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "paymentSuccessAppBarTitle": "Malipo Yamefaulu",
+  "paymentSuccessTitle": "Malipo Yamekamilika Kwa Mafanikio!",
+  "paymentSuccessButtonViewReceipt": "Tazama Risiti",
+  "paymentSuccessButtonDone": "Imekamilika",
+  "paymentReceiptTitle": "Risiti",
+  "paymentReceiptTransactionId": "Kitambulisho cha Muamala",
+  "paymentReceiptDate": "Tarehe",
+  "paymentReceiptFuelType": "Aina ya Mafuta",
+  "paymentReceiptQuantity": "Kiasi",
+  "paymentReceiptPricePerLiter": "Bei kwa Lita",
+  "paymentReceiptTotalAmount": "Jumla ya Malipo",
+  "paymentReceiptPaymentMethod": "Njia ya Malipo",
+  "paymentReceiptSuccessMessage": "Malipo Yamefaulu",
+  "paymentReceiptSuccessTagline": "Malipo Yamefaulu",
+  "paymentReceiptPrinted": "Risiti imechapishwa kwa mafanikio",
+  "mainPlaceholderFuelTitle": "Mafuta",
+  "mainPlaceholderFuelMessage": "Tafadhali chagua kituo kutoka Mwanzo",
+  "mainPlaceholderPaymentTitle": "Malipo",
+  "mainPlaceholderPaymentMessage": "Kamilisha mchakato wa kumimina ili kuendelea",
+  "dashboardTitle": "Dashibodi",
+  "dashboardPeriodToday": "Leo",
+  "dashboardPeriodWeek": "Wiki Hii",
+  "dashboardPeriodMonth": "Mwezi Huu",
+  "dashboardStatTotalSales": "Jumla ya Mauzo",
+  "dashboardStatFuelDispensed": "Mafuta Yaliyotolewa",
+  "dashboardStatReceipts": "Risiti",
+  "dashboardStatTransactions": "Miamala",
+  "dashboardSalesPerformanceTitle": "Utendaji wa Mauzo",
+  "dashboardSalesPerformanceEmpty": "Hakuna data ya mauzo",
+  "dashboardRecentTransactionsTitle": "Miamala ya Hivi Karibuni",
+  "dashboardRecentTransactionsEmpty": "Hakuna miamala ya hivi karibuni",
+  "dashboardQuickActionsTitle": "Vitendo vya Haraka",
+  "dashboardQuickActionManageStations": "Dhibiti Vituo",
+  "dashboardQuickActionUpdatePrices": "Sasisha Bei",
+  "receiptPaymentSuccessfulBanner": "Malipo Yamefaulu"
+}
+
