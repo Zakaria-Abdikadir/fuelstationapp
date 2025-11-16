@@ -1,13 +1,10 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
-import 'package:image_picker/image_picker.dart';
-import 'package:path/path.dart' as p;
-import 'package:path_provider/path_provider.dart';
 
 import '../l10n/app_localizations.dart';
 import '../utils/app_colors.dart';
 import '../utils/settings_service.dart';
+import '../services/auth_service.dart';
+import '../models/user.dart';
 import '../db/db_helper.dart';
 
 class SettingsScreen extends StatefulWidget {
@@ -19,6 +16,7 @@ class SettingsScreen extends StatefulWidget {
 
 class _SettingsScreenState extends State<SettingsScreen> {
   final SettingsService _settingsService = SettingsService.instance;
+  final AuthService _authService = AuthService.instance;
   bool _notificationsEnabled = true;
   String _languageCode = 'en';
   String _themeMode = 'Light';
@@ -35,12 +33,13 @@ class _SettingsScreenState extends State<SettingsScreen> {
 
   Future<void> _loadSettings() async {
     await _settingsService.loadSettings();
+    final currentUser = _authService.currentUser;
     setState(() {
       _notificationsEnabled = _settingsService.notificationsEnabled;
       _languageCode = _settingsService.languageCode;
       _themeMode = _settingsService.themeMode;
-      _userName = _settingsService.userName;
-      _userEmail = _settingsService.userEmail;
+      _userName = currentUser?.fullName ?? _settingsService.userName;
+      _userEmail = currentUser?.email ?? _settingsService.userEmail;
       _avatarPath = _settingsService.userAvatarPath;
       _isLoading = false;
     });
@@ -216,196 +215,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
     }
   }
 
-  void _editProfile() {
-    final l10n = AppLocalizations.of(context)!;
-    final stateContext = context;
-    final scaffoldMessenger = ScaffoldMessenger.of(stateContext);
-    final nameController = TextEditingController(text: _userName);
-    final emailController = TextEditingController(text: _userEmail);
-    String? stagedAvatarPath = _avatarPath;
-    String? newAvatarPath;
-
-    showDialog(
-      context: context,
-      builder: (dialogContext) {
-        return StatefulBuilder(
-          builder: (context, setDialogState) {
-            Future<void> pickNewAvatar() async {
-              try {
-                final picker = ImagePicker();
-                final picked = await picker.pickImage(
-                  source: ImageSource.gallery,
-                  imageQuality: 85,
-                );
-                if (picked == null) return;
-
-                final savedPath = await _savePickedImage(picked);
-                if (savedPath == null) {
-                  if (newAvatarPath != null) {
-                    await _deleteAvatarFile(newAvatarPath);
-                    newAvatarPath = null;
-                  }
-                  if (stateContext.mounted) {
-                    scaffoldMessenger.showSnackBar(
-                      SnackBar(
-                        content: Text(l10n.settingsProfilePhotoError),
-                      ),
-                    );
-                  }
-                  return;
-                }
-
-                if (newAvatarPath != null && newAvatarPath != savedPath) {
-                  await _deleteAvatarFile(newAvatarPath);
-                }
-
-                newAvatarPath = savedPath;
-                setDialogState(() {
-                  stagedAvatarPath = savedPath;
-                });
-              } catch (_) {
-                if (newAvatarPath != null) {
-                  await _deleteAvatarFile(newAvatarPath);
-                  newAvatarPath = null;
-                }
-                if (stateContext.mounted) {
-                  scaffoldMessenger.showSnackBar(
-                    SnackBar(
-                      content: Text(l10n.settingsProfilePhotoError),
-                    ),
-                  );
-                }
-              }
-            }
-
-            return AlertDialog(
-              title: Text(l10n.settingsProfileEditTitle),
-              content: SingleChildScrollView(
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    GestureDetector(
-                      onTap: pickNewAvatar,
-                      child: CircleAvatar(
-                        radius: 40,
-                        backgroundColor: AppColors.primary,
-                        backgroundImage: stagedAvatarPath != null
-                            ? FileImage(File(stagedAvatarPath!))
-                            : null,
-                        child: stagedAvatarPath == null
-                            ? const Icon(
-                                Icons.person,
-                                size: 40,
-                                color: Colors.white,
-                              )
-                            : null,
-                      ),
-                    ),
-                    TextButton.icon(
-                      onPressed: pickNewAvatar,
-                      icon: const Icon(Icons.photo_camera),
-                      label: Text(l10n.settingsChangePhoto),
-                    ),
-                    const SizedBox(height: 12),
-                    TextField(
-                      controller: nameController,
-                      decoration: InputDecoration(
-                        labelText: l10n.commonName,
-                        border: const OutlineInputBorder(),
-                      ),
-                    ),
-                    const SizedBox(height: 16),
-                    TextField(
-                      controller: emailController,
-                      decoration: InputDecoration(
-                        labelText: l10n.commonEmail,
-                        border: const OutlineInputBorder(),
-                      ),
-                      keyboardType: TextInputType.emailAddress,
-                    ),
-                  ],
-                ),
-              ),
-              actions: [
-                TextButton(
-                  onPressed: () async {
-                    Navigator.pop(dialogContext);
-                    if (newAvatarPath != null &&
-                        newAvatarPath != _avatarPath) {
-                      await _deleteAvatarFile(newAvatarPath);
-                    }
-                  },
-                  child: Text(l10n.commonCancel),
-                ),
-                ElevatedButton(
-                  onPressed: () async {
-                    final trimmedName = nameController.text.trim();
-                    final trimmedEmail = emailController.text.trim();
-                    if (trimmedName.isEmpty || trimmedEmail.isEmpty) {
-                    if (!stateContext.mounted) return;
-                    scaffoldMessenger.showSnackBar(
-                        SnackBar(
-                          content: Text(l10n.settingsProfileFillAllFields),
-                        ),
-                      );
-                      if (newAvatarPath != null &&
-                          newAvatarPath != _avatarPath) {
-                        await _deleteAvatarFile(newAvatarPath);
-                        newAvatarPath = null;
-                      }
-                      return;
-                    }
-
-                    String? avatarToPersist = _avatarPath;
-                    if (newAvatarPath != null) {
-                      await _settingsService.updateUserAvatar(newAvatarPath);
-                      if (_avatarPath != null &&
-                          _avatarPath != newAvatarPath) {
-                        await _deleteAvatarFile(_avatarPath);
-                      }
-                      avatarToPersist = newAvatarPath;
-                    } else {
-                      await _settingsService.updateUserAvatar(_avatarPath);
-                    }
-
-                    await _settingsService.updateUserProfile(
-                      trimmedName,
-                      trimmedEmail,
-                    );
-
-                    if (!mounted) return;
-                    setState(() {
-                      _userName = trimmedName;
-                      _userEmail = trimmedEmail;
-                      _avatarPath = avatarToPersist;
-                    });
-
-                    if (!dialogContext.mounted) return;
-                    Navigator.pop(dialogContext);
-                    if (!stateContext.mounted) return;
-                    scaffoldMessenger.showSnackBar(
-                      SnackBar(
-                        content: Text(
-                          newAvatarPath != null
-                              ? l10n.settingsProfilePhotoUpdated
-                              : l10n.settingsProfileUpdated,
-                        ),
-                      ),
-                    );
-                  },
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: AppColors.primary,
-                    foregroundColor: Colors.white,
-                  ),
-                  child: Text(l10n.commonSave),
-                ),
-              ],
-            );
-          },
-        );
-      },
-    );
-  }
 
   void _showTermsAndConditions() {
     final currentYear = DateTime.now().year;
@@ -475,61 +284,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
       ),
       body: ListView(
         children: [
-          Container(
-            padding: const EdgeInsets.all(16),
-            decoration: BoxDecoration(
-              color: AppColors.primary.withValues(alpha: 0.1),
-            ),
-            child: Row(
-              children: [
-                GestureDetector(
-                  onTap: _editProfile,
-                  child: CircleAvatar(
-                    radius: 32,
-                    backgroundColor: AppColors.primary,
-                    backgroundImage: _avatarPath != null
-                        ? FileImage(File(_avatarPath!))
-                        : null,
-                    child: _avatarPath == null
-                        ? const Icon(
-                            Icons.person,
-                            size: 32,
-                            color: Colors.white,
-                          )
-                        : null,
-                  ),
-                ),
-                const SizedBox(width: 16),
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        _userName,
-                        style: const TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      const SizedBox(height: 4),
-                      Text(
-                        _userEmail,
-                        style: TextStyle(
-                          fontSize: 14,
-                          color: AppColors.textSecondary,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                IconButton(
-                  onPressed: _editProfile,
-                  icon: const Icon(Icons.edit),
-                ),
-              ],
-            ),
-          ),
           const SizedBox(height: 16),
+          // General Section
           _buildSettingsSection(
             l10n.settingsSectionGeneral,
             [
@@ -549,31 +305,35 @@ class _SettingsScreenState extends State<SettingsScreen> {
             ],
           ),
           const SizedBox(height: 16),
-          _buildSettingsSection(
-            l10n.settingsSectionData,
-            [
-              _buildSettingsTile(
-                icon: Icons.backup,
-                title: l10n.settingsBackupTitle,
-                subtitle: l10n.settingsBackupSubtitle,
-                onTap: _backupData,
-              ),
-              _buildSettingsTile(
-                icon: Icons.restore,
-                title: l10n.settingsRestoreTitle,
-                subtitle: l10n.settingsRestoreSubtitle,
-                onTap: _restoreData,
-              ),
-              _buildSettingsTile(
-                icon: Icons.delete_outline,
-                title: l10n.settingsClearCacheTitle,
-                subtitle: l10n.settingsClearCacheSubtitle,
-                onTap: () {
-                  _showClearCacheDialog(context);
-                },
-              ),
-            ],
-          ),
+          // Data section - only for station owners
+          if (_authService.currentUser?.role == UserRole.stationOwner)
+            _buildSettingsSection(
+              l10n.settingsSectionData,
+              [
+                _buildSettingsTile(
+                  icon: Icons.backup,
+                  title: l10n.settingsBackupTitle,
+                  subtitle: l10n.settingsBackupSubtitle,
+                  onTap: _backupData,
+                ),
+                _buildSettingsTile(
+                  icon: Icons.restore,
+                  title: l10n.settingsRestoreTitle,
+                  subtitle: l10n.settingsRestoreSubtitle,
+                  onTap: _restoreData,
+                ),
+                _buildSettingsTile(
+                  icon: Icons.delete_outline,
+                  title: l10n.settingsClearCacheTitle,
+                  subtitle: l10n.settingsClearCacheSubtitle,
+                  onTap: () {
+                    _showClearCacheDialog(context);
+                  },
+                ),
+              ],
+            ),
+          if (_authService.currentUser?.role == UserRole.stationOwner)
+            const SizedBox(height: 16),
           const SizedBox(height: 16),
           _buildSettingsSection(
             l10n.settingsSectionAbout,
@@ -729,25 +489,5 @@ class _SettingsScreenState extends State<SettingsScreen> {
     }
   }
 
-  Future<String?> _savePickedImage(XFile picked) async {
-    try {
-      final appDir = await getApplicationDocumentsDirectory();
-      final fileName =
-          'profile_${DateTime.now().millisecondsSinceEpoch}${p.extension(picked.path)}';
-      final destinationPath = p.join(appDir.path, fileName);
-      await picked.saveTo(destinationPath);
-      return destinationPath;
-    } catch (_) {
-      return null;
-    }
-  }
-
-  Future<void> _deleteAvatarFile(String? path) async {
-    if (path == null) return;
-    final file = File(path);
-    if (await file.exists()) {
-      await file.delete();
-    }
-  }
 }
 

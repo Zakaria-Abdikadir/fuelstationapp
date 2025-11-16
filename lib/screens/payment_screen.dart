@@ -1,12 +1,20 @@
+import 'dart:io';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:intl/intl.dart';
+import 'package:pdf/pdf.dart';
+import 'package:pdf/widgets.dart' as pw;
+import 'package:path_provider/path_provider.dart';
+import 'package:share_plus/share_plus.dart';
+import 'package:cross_file/cross_file.dart';
 import '../db/db_helper.dart';
 import '../l10n/app_localizations.dart';
 import '../models/receipt.dart';
 import '../models/station.dart';
 import '../navigation/bottom_navbar.dart';
+import '../services/auth_service.dart';
 import '../utils/app_colors.dart';
-import 'home_screen.dart';
+import 'main_navigation_screen.dart';
 
 class PaymentScreen extends StatefulWidget {
   final Station station;
@@ -50,6 +58,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
 
       // Generate receipt
       final transactionId = _generateTransactionId();
+      final currentUser = AuthService.instance.currentUser;
       final receipt = Receipt(
         stationId: widget.station.id ?? 0,
         stationName: widget.station.name,
@@ -62,6 +71,9 @@ class _PaymentScreenState extends State<PaymentScreen> {
         paymentMethod: _selectedPaymentMethod,
         transactionId: transactionId,
         transactionDate: DateTime.now(),
+        customerName: currentUser?.fullName,
+        customerPhone: currentUser?.phone,
+        customerId: currentUser?.id,
       );
 
       // Save receipt to database with timeout
@@ -109,6 +121,232 @@ class _PaymentScreenState extends State<PaymentScreen> {
     return 'TXN$dateStr$timeStr$random';
   }
 
+  Future<void> _downloadReceipt() async {
+    if (_generatedReceipt == null) return;
+
+    try {
+      final l10n = AppLocalizations.of(context)!;
+      
+      // Show loading indicator
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: const Row(
+              children: [
+                SizedBox(
+                  width: 20,
+                  height: 20,
+                  child: CircularProgressIndicator(strokeWidth: 2),
+                ),
+                SizedBox(width: 16),
+                Text('Generating receipt...'),
+              ],
+            ),
+            duration: const Duration(seconds: 2),
+          ),
+        );
+      }
+
+      // Generate PDF
+      final pdf = await _generateReceiptPDF(_generatedReceipt!);
+      
+      // Get directory for saving
+      Directory? directory;
+      if (Platform.isAndroid) {
+        directory = await getExternalStorageDirectory();
+        // Try to get Downloads directory
+        final downloadsPath = '/storage/emulated/0/Download';
+        if (await Directory(downloadsPath).exists()) {
+          directory = Directory(downloadsPath);
+        }
+      } else if (Platform.isIOS) {
+        directory = await getApplicationDocumentsDirectory();
+      } else {
+        directory = await getApplicationDocumentsDirectory();
+      }
+
+      if (directory == null) {
+        throw Exception('Could not access storage directory');
+      }
+
+      // Create filename with timestamp
+      final timestamp = DateFormat('yyyyMMdd_HHmmss').format(DateTime.now());
+      final fileName = 'Receipt_${_generatedReceipt!.transactionId}_$timestamp.pdf';
+      final filePath = '${directory.path}/$fileName';
+
+      // Save PDF file
+      final file = File(filePath);
+      await file.writeAsBytes(await pdf.save());
+
+      if (mounted) {
+        // Share the file (allows user to save/share)
+        await Share.shareXFiles(
+          [XFile(filePath)],
+          text: 'Fuel Station Receipt',
+          subject: 'Receipt - ${_generatedReceipt!.transactionId}',
+        );
+
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text('Receipt saved and ready to download'),
+            backgroundColor: AppColors.success,
+            duration: const Duration(seconds: 3),
+          ),
+        );
+      }
+    } catch (e) {
+      debugPrint('Error downloading receipt: $e');
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text('Error downloading receipt: $e'),
+            backgroundColor: AppColors.error,
+          ),
+        );
+      }
+    }
+  }
+
+  Future<pw.Document> _generateReceiptPDF(Receipt receipt) async {
+    final pdf = pw.Document();
+    final dateFormat = DateFormat('MMM dd, yyyy HH:mm');
+
+    pdf.addPage(
+      pw.Page(
+        pageFormat: PdfPageFormat.a4,
+        margin: const pw.EdgeInsets.all(40),
+        build: (pw.Context context) {
+          return pw.Column(
+            crossAxisAlignment: pw.CrossAxisAlignment.start,
+            children: [
+              // Header
+              pw.Row(
+                mainAxisAlignment: pw.MainAxisAlignment.center,
+                children: [
+                  pw.Text(
+                    'FUEL STATION RECEIPT',
+                    style: pw.TextStyle(
+                      fontSize: 24,
+                      fontWeight: pw.FontWeight.bold,
+                    ),
+                  ),
+                ],
+              ),
+              pw.SizedBox(height: 20),
+              pw.Divider(),
+              pw.SizedBox(height: 20),
+              
+              // Station Info
+              pw.Text(
+                receipt.stationName,
+                style: pw.TextStyle(
+                  fontSize: 18,
+                  fontWeight: pw.FontWeight.bold,
+                ),
+              ),
+              pw.SizedBox(height: 10),
+              
+              // Transaction Details
+              _buildPDFRow('Transaction ID:', receipt.transactionId),
+              _buildPDFRow('Date:', dateFormat.format(receipt.transactionDate)),
+              pw.SizedBox(height: 10),
+              pw.Divider(),
+              pw.SizedBox(height: 10),
+              
+              // Fuel Details
+              _buildPDFRow('Fuel Type:', receipt.fuelType),
+              _buildPDFRow('Quantity:', '${receipt.quantity.toStringAsFixed(2)} L'),
+              _buildPDFRow('Price per Liter:', 'KES ${receipt.pricePerLiter.toStringAsFixed(2)}'),
+              pw.SizedBox(height: 10),
+              pw.Divider(),
+              pw.SizedBox(height: 10),
+              
+              // Payment Details
+              _buildPDFRow('Payment Method:', receipt.paymentMethod),
+              pw.SizedBox(height: 10),
+              
+              // Total
+              pw.Row(
+                mainAxisAlignment: pw.MainAxisAlignment.spaceBetween,
+                children: [
+                  pw.Text(
+                    'Total Amount:',
+                    style: pw.TextStyle(
+                      fontSize: 16,
+                      fontWeight: pw.FontWeight.bold,
+                    ),
+                  ),
+                  pw.Text(
+                    'KES ${receipt.totalAmount.toStringAsFixed(2)}',
+                    style: pw.TextStyle(
+                      fontSize: 18,
+                      fontWeight: pw.FontWeight.bold,
+                    ),
+                  ),
+                ],
+              ),
+              pw.SizedBox(height: 20),
+              pw.Divider(),
+              pw.SizedBox(height: 20),
+              
+              // Customer Info (if available)
+              if (receipt.customerName != null || receipt.customerPhone != null) ...[
+                pw.Text(
+                  'Customer Information:',
+                  style: pw.TextStyle(
+                    fontSize: 14,
+                    fontWeight: pw.FontWeight.bold,
+                  ),
+                ),
+                pw.SizedBox(height: 5),
+                if (receipt.customerName != null)
+                  _buildPDFRow('Name:', receipt.customerName!),
+                if (receipt.customerPhone != null)
+                  _buildPDFRow('Phone:', receipt.customerPhone!),
+                pw.SizedBox(height: 20),
+              ],
+              
+              // Footer
+              pw.Divider(),
+              pw.SizedBox(height: 10),
+              pw.Text(
+                'Thank you for your purchase!',
+                style: pw.TextStyle(
+                  fontSize: 12,
+                  fontStyle: pw.FontStyle.italic,
+                ),
+                textAlign: pw.TextAlign.center,
+              ),
+            ],
+          );
+        },
+      ),
+    );
+
+    return pdf;
+  }
+
+  pw.Widget _buildPDFRow(String label, String value) {
+    return pw.Padding(
+      padding: const pw.EdgeInsets.only(bottom: 8),
+      child: pw.Row(
+        crossAxisAlignment: pw.CrossAxisAlignment.start,
+        children: [
+          pw.SizedBox(
+            width: 120,
+            child: pw.Text(
+              label,
+              style: pw.TextStyle(fontWeight: pw.FontWeight.bold),
+            ),
+          ),
+          pw.Expanded(
+            child: pw.Text(value),
+          ),
+        ],
+      ),
+    );
+  }
+
   void _viewReceipt() {
     if (_generatedReceipt == null) return;
 
@@ -123,22 +361,20 @@ class _PaymentScreenState extends State<PaymentScreen> {
         actions: [
           TextButton(
             onPressed: () {
-              Navigator.pop(context);
-              Navigator.pushReplacement(
+              Navigator.pop(context); // Close dialog
+              // Navigate back to MainNavigationScreen
+              Navigator.pushAndRemoveUntil(
                 context,
-                MaterialPageRoute(builder: (context) => const HomeScreen()),
+                MaterialPageRoute(builder: (context) => const MainNavigationScreen()),
+                (route) => false,
               );
             },
             child: Text(l10n.commonDone),
           ),
           TextButton(
             onPressed: () {
-              // TODO: Print or share receipt
-              ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(
-                  content: Text(l10n.paymentReceiptPrinted),
-                ),
-              );
+              Navigator.pop(context); // Close dialog first
+              _downloadReceipt();
             },
             child: Text(l10n.commonPrint),
           ),
@@ -307,9 +543,11 @@ class _PaymentScreenState extends State<PaymentScreen> {
                   Expanded(
                     child: ElevatedButton(
                       onPressed: () {
-                        Navigator.pushReplacement(
+                        // Navigate back to MainNavigationScreen
+                        Navigator.pushAndRemoveUntil(
                           context,
-                          MaterialPageRoute(builder: (context) => const HomeScreen()),
+                          MaterialPageRoute(builder: (context) => const MainNavigationScreen()),
+                          (route) => false,
                         );
                       },
                       style: ElevatedButton.styleFrom(

@@ -33,8 +33,12 @@ class BottomNavBar extends StatelessWidget {
           label: l10n.navFuel,
         ),
         BottomNavigationBarItem(
-          icon: const Icon(Icons.payment),
-          label: l10n.navPayment,
+          icon: const Icon(Icons.dashboard),
+          label: l10n.navDashboard,
+        ),
+        BottomNavigationBarItem(
+          icon: const Icon(Icons.person),
+          label: l10n.navProfile,
         ),
       ],
     );

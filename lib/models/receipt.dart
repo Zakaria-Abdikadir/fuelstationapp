@@ -11,6 +11,7 @@ class Receipt {
   final DateTime transactionDate;
   final String? customerName;
   final String? customerPhone;
+  final int? customerId;
 
   Receipt({
     this.id,
@@ -25,6 +26,7 @@ class Receipt {
     required this.transactionDate,
     this.customerName,
     this.customerPhone,
+    this.customerId,
   });
 
   Map<String, dynamic> toMap() {
@@ -41,6 +43,7 @@ class Receipt {
       'transactionDate': transactionDate.toIso8601String(),
       'customerName': customerName,
       'customerPhone': customerPhone,
+      'customerId': customerId,
     };
   }
 
@@ -58,6 +61,7 @@ class Receipt {
       transactionDate: DateTime.parse(map['transactionDate'] as String),
       customerName: map['customerName'] as String?,
       customerPhone: map['customerPhone'] as String?,
+      customerId: map['customerId'] as int?,
     );
   }
 
@@ -74,6 +78,7 @@ class Receipt {
     DateTime? transactionDate,
     String? customerName,
     String? customerPhone,
+    int? customerId,
   }) {
     return Receipt(
       id: id ?? this.id,
@@ -88,6 +93,7 @@ class Receipt {
       transactionDate: transactionDate ?? this.transactionDate,
       customerName: customerName ?? this.customerName,
       customerPhone: customerPhone ?? this.customerPhone,
+      customerId: customerId ?? this.customerId,
     );
   }
 }

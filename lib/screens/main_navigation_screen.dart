@@ -2,8 +2,16 @@ import 'package:flutter/material.dart';
 import '../l10n/app_localizations.dart';
 import '../navigation/bottom_navbar.dart';
 import '../utils/app_colors.dart';
+import '../services/auth_service.dart';
+import '../models/user.dart';
 import 'home_screen.dart';
 import 'fuel_screen.dart';
+import 'station_owner_dashboard.dart';
+import 'customer_dashboard.dart';
+import 'settings_screen.dart';
+import 'profile_screen.dart';
+import 'login_screen.dart';
+import 'stations_view_screen.dart';
 import '../models/station.dart';
 
 class MainNavigationScreen extends StatefulWidget {
@@ -16,59 +24,114 @@ class MainNavigationScreen extends StatefulWidget {
 class _MainNavigationScreenState extends State<MainNavigationScreen> {
   int _currentIndex = 0;
   Station? _selectedStation;
+  final _authService = AuthService.instance;
 
-  void _navigateToPayment(Station station, String fuelType, double quantity, double totalAmount) {
-    setState(() {
-      _currentIndex = 2; // Navigate to Payment screen
-    });
-    // Payment screen will be handled separately via Navigator.push for now
-    // This maintains the flow while keeping navigation working
+  @override
+  void initState() {
+    super.initState();
+    _authService.addListener(_onAuthChanged);
+  }
+
+  @override
+  void dispose() {
+    _authService.removeListener(_onAuthChanged);
+    super.dispose();
+  }
+
+  void _onAuthChanged() {
+    if (!_authService.isLoggedIn && mounted) {
+      // User logged out, navigate to login
+      Navigator.pushAndRemoveUntil(
+        context,
+        MaterialPageRoute(builder: (context) => const LoginScreen()),
+        (route) => false,
+      );
+    } else {
+      setState(() {});
+    }
   }
 
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
-    // Build screens list
-    List<Widget> screens = [
-      HomeScreen(
-        onStationSelected: (station) {
-          setState(() {
-            _selectedStation = station;
-            _currentIndex = 1; // Navigate to Fuel screen
-          });
-        },
-      ),
-      _selectedStation != null
-          ? FuelScreenWrapper(
-              station: _selectedStation!,
-              onNavigateToPayment: _navigateToPayment,
-            )
-          : _buildPlaceholderScreen(
-              icon: Icons.local_gas_station,
-              title: l10n.mainPlaceholderFuelTitle,
-              message: l10n.mainPlaceholderFuelMessage,
-            ),
-      _buildPlaceholderScreen(
-        icon: Icons.payment,
-        title: l10n.mainPlaceholderPaymentTitle,
-        message: l10n.mainPlaceholderPaymentMessage,
-      ),
-    ];
+    final currentUser = _authService.currentUser;
+    final isStationOwner = currentUser?.role == UserRole.stationOwner;
+
+    // Build screens based on user role
+    List<Widget> screens;
+    if (isStationOwner) {
+      // Station Owner screens
+      screens = [
+        const StationOwnerDashboard(),
+        const StationsViewScreen(),
+        const ProfileScreen(),
+      ];
+    } else {
+      // Customer screens - 4 tabs: Home, Fuel, Dashboard, Profile
+      screens = [
+        HomeScreen(
+          onStationSelected: (station) {
+            setState(() {
+              _selectedStation = station;
+              _currentIndex = 1; // Navigate to Fuel screen
+            });
+          },
+        ),
+        _selectedStation != null
+            ? FuelScreenWrapper(station: _selectedStation!)
+            : _buildPlaceholderScreen(
+                icon: Icons.local_gas_station,
+                title: l10n.mainPlaceholderFuelTitle,
+                message: l10n.mainPlaceholderFuelMessage,
+              ),
+        const CustomerDashboard(),
+        const ProfileScreen(),
+      ];
+    }
 
     return Scaffold(
       body: IndexedStack(
         index: _currentIndex,
         children: screens,
       ),
-      bottomNavigationBar: BottomNavBar(
+      bottomNavigationBar: _buildBottomNavBar(isStationOwner, l10n),
+    );
+  }
+
+  Widget _buildBottomNavBar(bool isStationOwner, AppLocalizations l10n) {
+    if (isStationOwner) {
+      return BottomNavigationBar(
         currentIndex: _currentIndex,
         onTap: (index) {
           setState(() {
             _currentIndex = index;
           });
         },
-      ),
-    );
+        items: [
+          BottomNavigationBarItem(
+            icon: const Icon(Icons.dashboard),
+            label: l10n.navDashboard,
+          ),
+          BottomNavigationBarItem(
+            icon: const Icon(Icons.local_gas_station),
+            label: l10n.navStations,
+          ),
+          BottomNavigationBarItem(
+            icon: const Icon(Icons.person),
+            label: l10n.navProfile,
+          ),
+        ],
+      );
+    } else {
+      return BottomNavBar(
+        currentIndex: _currentIndex,
+        onTap: (index) {
+          setState(() {
+            _currentIndex = index;
+          });
+        },
+      );
+    }
   }
 
   Widget _buildPlaceholderScreen({

@@ -42,6 +42,12 @@ class AppLocalizationsSw extends AppLocalizations {
   String get navSettings => 'Mipangilio';
 
   @override
+  String get navStations => 'Stations';
+
+  @override
+  String get navProfile => 'Profile';
+
+  @override
   String get commonCancel => 'Ghairi';
 
   @override
@@ -82,6 +88,9 @@ class AppLocalizationsSw extends AppLocalizations {
 
   @override
   String get settingsTitle => 'Mipangilio';
+
+  @override
+  String get settingsSectionProfile => 'Profile';
 
   @override
   String get settingsSectionGeneral => 'Jumla';
@@ -145,7 +154,28 @@ class AppLocalizationsSw extends AppLocalizations {
   String get settingsThemeDialogTitle => 'Chagua Mandhari';
 
   @override
+  String get settingsProfileTitle => 'Profile';
+
+  @override
+  String get settingsProfileSubtitle => 'View and edit your profile';
+
+  @override
   String get settingsProfileEditTitle => 'Hariri Wasifu';
+
+  @override
+  String get settingsProfileEditButton => 'Edit Profile';
+
+  @override
+  String get settingsProfileInfo => 'Profile Information';
+
+  @override
+  String get settingsProfilePhone => 'Phone';
+
+  @override
+  String get settingsProfileRole => 'Role';
+
+  @override
+  String get settingsProfileGoToSettings => 'Manage app settings';
 
   @override
   String get settingsProfileFillAllFields => 'Tafadhali jaza maeneo yote';
@@ -527,5 +557,529 @@ class AppLocalizationsSw extends AppLocalizations {
   String get dashboardQuickActionUpdatePrices => 'Sasisha Bei';
 
   @override
+  String get dashboardTitleStationOwner => 'Station Owner Dashboard';
+
+  @override
+  String get dashboardTitleCustomer => 'My Dashboard';
+
+  @override
+  String dashboardWelcome(String name) {
+    return 'Welcome, $name';
+  }
+
+  @override
+  String get dashboardStatTotalSpent => 'Total Spent';
+
+  @override
+  String get dashboardStatFuelPurchased => 'Fuel Purchased';
+
+  @override
+  String get dashboardStatTotalPurchases => 'Total Purchases';
+
+  @override
+  String get dashboardStatAveragePurchase => 'Avg Purchase';
+
+  @override
+  String get dashboardStatStations => 'Stations';
+
+  @override
+  String get dashboardPurchaseHistory => 'Purchase History';
+
+  @override
+  String get dashboardNoPurchases => 'No purchases yet';
+
+  @override
+  String get dashboardNoPurchasesHint =>
+      'Start purchasing fuel to see your history here';
+
+  @override
+  String get commonViewAll => 'View All';
+
+  @override
+  String get loginTitle => 'Welcome Back';
+
+  @override
+  String get loginSubtitle => 'Sign in to continue';
+
+  @override
+  String get loginEmailLabel => 'Email';
+
+  @override
+  String get loginEmailHint => 'Enter your email';
+
+  @override
+  String get loginEmailRequired => 'Email is required';
+
+  @override
+  String get loginEmailInvalid => 'Please enter a valid email';
+
+  @override
+  String get loginPasswordLabel => 'Password';
+
+  @override
+  String get loginPasswordHint => 'Enter your password';
+
+  @override
+  String get loginPasswordRequired => 'Password is required';
+
+  @override
+  String get loginPasswordMinLength => 'Password must be at least 6 characters';
+
+  @override
+  String get loginButton => 'Sign In';
+
+  @override
+  String get loginNoAccount => 'Don\'t have an account?';
+
+  @override
+  String get loginRegisterLink => 'Register';
+
+  @override
+  String get loginErrorInvalidCredentials => 'Invalid email or password';
+
+  @override
+  String get loginDemoAccounts => 'Demo Accounts';
+
+  @override
+  String get loginDemoOwner => 'Owner: owner@station.com / owner123';
+
+  @override
+  String get loginDemoCustomer =>
+      'Customer: customer@example.com / customer123';
+
+  @override
+  String get registerTitle => 'Create Account';
+
+  @override
+  String get registerSelectRole => 'Select Your Role';
+
+  @override
+  String get registerRoleCustomer => 'Customer';
+
+  @override
+  String get registerRoleStationOwner => 'Station Owner';
+
+  @override
+  String get registerFullNameLabel => 'Full Name';
+
+  @override
+  String get registerFullNameHint => 'Enter your full name';
+
+  @override
+  String get registerFullNameRequired => 'Full name is required';
+
+  @override
+  String get registerEmailLabel => 'Email';
+
+  @override
+  String get registerEmailHint => 'Enter your email';
+
+  @override
+  String get registerEmailRequired => 'Email is required';
+
+  @override
+  String get registerEmailInvalid => 'Please enter a valid email';
+
+  @override
+  String get registerPhoneLabel => 'Phone';
+
+  @override
+  String get registerPhoneHint => 'Enter your phone number';
+
+  @override
+  String get registerPhoneRequired => 'Phone is required';
+
+  @override
+  String get registerPasswordLabel => 'Password';
+
+  @override
+  String get registerPasswordHint => 'Enter your password';
+
+  @override
+  String get registerPasswordRequired => 'Password is required';
+
+  @override
+  String get registerPasswordMinLength =>
+      'Password must be at least 6 characters';
+
+  @override
+  String get registerConfirmPasswordLabel => 'Confirm Password';
+
+  @override
+  String get registerConfirmPasswordHint => 'Confirm your password';
+
+  @override
+  String get registerConfirmPasswordRequired => 'Please confirm your password';
+
+  @override
+  String get registerConfirmPasswordMismatch => 'Passwords do not match';
+
+  @override
+  String get registerButton => 'Register';
+
+  @override
+  String get registerHaveAccount => 'Already have an account?';
+
+  @override
+  String get registerLoginLink => 'Sign In';
+
+  @override
+  String get registerErrorEmailExists => 'Email already registered';
+
+  @override
+  String get settingsLogoutTitle => 'Logout';
+
+  @override
+  String get settingsLogoutMessage => 'Are you sure you want to logout?';
+
+  @override
+  String get settingsLogoutButton => 'Logout';
+
+  @override
+  String get manageStationsTitle => 'Manage Stations';
+
+  @override
+  String get manageStationsComingSoon => 'Station management coming soon';
+
+  @override
+  String get managePricesTitle => 'Manage Prices';
+
+  @override
+  String get managePricesComingSoon => 'Price management coming soon';
+
+  @override
+  String get stationsViewMyStation => 'My Station';
+
+  @override
+  String get stationsViewAllStations => 'All Stations';
+
+  @override
+  String get stationsViewSearchHint => 'Search stations...';
+
+  @override
+  String get stationsViewAddStation => 'Add Station';
+
+  @override
   String get receiptPaymentSuccessfulBanner => 'Malipo Yamefaulu';
+
+  @override
+  String get commonView => 'View';
+
+  @override
+  String get commonEdit => 'Edit';
+
+  @override
+  String get commonDelete => 'Delete';
+
+  @override
+  String get manageStationsSearchHint => 'Search stations...';
+
+  @override
+  String get manageStationsNoStations => 'No stations found';
+
+  @override
+  String get manageStationsAddStation => 'Add Station';
+
+  @override
+  String get manageStationsEditStation => 'Edit Station';
+
+  @override
+  String get manageStationsAddress => 'Address';
+
+  @override
+  String get manageStationsLocation => 'Location';
+
+  @override
+  String get manageStationsSelectLocation => 'Select Location on Map';
+
+  @override
+  String get manageStationsActive => 'Active';
+
+  @override
+  String get manageStationsDeleteTitle => 'Delete Station';
+
+  @override
+  String manageStationsDeleteMessage(String name) {
+    return 'Are you sure you want to delete $name?';
+  }
+
+  @override
+  String get manageStationsDeleteSuccess => 'Station deleted successfully';
+
+  @override
+  String get managePricesUpdatePetrol => 'Update Petrol Price';
+
+  @override
+  String get managePricesUpdateDiesel => 'Update Diesel Price';
+
+  @override
+  String get managePricesPriceHistory => 'Price History';
+
+  @override
+  String get managePricesBulkUpdate => 'Bulk Update';
+
+  @override
+  String get managePricesSelectStations => 'Select Stations';
+
+  @override
+  String get managePricesNewPrice => 'New Price (KES)';
+
+  @override
+  String get managePricesUpdateSuccess => 'Price updated successfully';
+
+  @override
+  String get managePricesHistoryEmpty => 'No price history available';
+
+  @override
+  String get receiptDetailsTitle => 'Receipt Details';
+
+  @override
+  String get receiptDetailsTransactionId => 'Transaction ID';
+
+  @override
+  String get receiptDetailsDate => 'Date';
+
+  @override
+  String get receiptDetailsStation => 'Station';
+
+  @override
+  String get receiptDetailsFuelType => 'Fuel Type';
+
+  @override
+  String get receiptDetailsQuantity => 'Quantity';
+
+  @override
+  String get receiptDetailsPricePerLiter => 'Price per Liter';
+
+  @override
+  String get receiptDetailsTotalAmount => 'Total Amount';
+
+  @override
+  String get receiptDetailsPaymentMethod => 'Payment Method';
+
+  @override
+  String get receiptDetailsCustomer => 'Customer';
+
+  @override
+  String get reportsTitle => 'Reports & Analytics';
+
+  @override
+  String get reportsExportPDF => 'Export as PDF';
+
+  @override
+  String get reportsExportExcel => 'Export as Excel';
+
+  @override
+  String get reportsSalesReport => 'Sales Report';
+
+  @override
+  String get reportsFuelConsumption => 'Fuel Consumption';
+
+  @override
+  String get reportsCustomerAnalytics => 'Customer Analytics';
+
+  @override
+  String get reportsRevenueTrends => 'Revenue Trends';
+
+  @override
+  String get reportsSelectPeriod => 'Select Period';
+
+  @override
+  String get reportsGenerate => 'Generate Report';
+
+  @override
+  String get stockManagementTitle => 'Stock Management';
+
+  @override
+  String get stockManagementTrackStock => 'Track Stock';
+
+  @override
+  String get stockManagementLowStockAlerts => 'Low Stock Alerts';
+
+  @override
+  String get stockManagementStockHistory => 'Stock History';
+
+  @override
+  String get stockManagementReorder => 'Reorder Management';
+
+  @override
+  String get stockManagementCurrentStock => 'Current Stock';
+
+  @override
+  String get stockManagementMinThreshold => 'Minimum Threshold';
+
+  @override
+  String get stockManagementUpdateStock => 'Update Stock';
+
+  @override
+  String get stockManagementStockUpdated => 'Stock updated successfully';
+
+  @override
+  String get stockManagementLowStock => 'Low Stock Alert';
+
+  @override
+  String get stockManagementReorderLevel => 'Reorder Level';
+
+  @override
+  String get employeeManagementTitle => 'Employee Management';
+
+  @override
+  String get employeeManagementAddEmployee => 'Add Employee';
+
+  @override
+  String get employeeManagementEditEmployee => 'Edit Employee';
+
+  @override
+  String get employeeManagementFullName => 'Full Name';
+
+  @override
+  String get employeeManagementEmail => 'Email';
+
+  @override
+  String get employeeManagementPhone => 'Phone';
+
+  @override
+  String get employeeManagementRole => 'Role';
+
+  @override
+  String get employeeManagementActive => 'Active';
+
+  @override
+  String get employeeManagementNoEmployees => 'No employees found';
+
+  @override
+  String get employeeManagementDeleteTitle => 'Delete Employee';
+
+  @override
+  String employeeManagementDeleteMessage(String name) {
+    return 'Are you sure you want to delete $name?';
+  }
+
+  @override
+  String get stationHoursTitle => 'Station Hours';
+
+  @override
+  String get stationHoursManageHours => 'Manage Hours';
+
+  @override
+  String get stationHoursDay => 'Day';
+
+  @override
+  String get stationHoursOpenTime => 'Open Time';
+
+  @override
+  String get stationHoursCloseTime => 'Close Time';
+
+  @override
+  String get stationHours24Hours => '24 Hours';
+
+  @override
+  String get stationHoursClosed => 'Closed';
+
+  @override
+  String get stationHoursMonday => 'Monday';
+
+  @override
+  String get stationHoursTuesday => 'Tuesday';
+
+  @override
+  String get stationHoursWednesday => 'Wednesday';
+
+  @override
+  String get stationHoursThursday => 'Thursday';
+
+  @override
+  String get stationHoursFriday => 'Friday';
+
+  @override
+  String get stationHoursSaturday => 'Saturday';
+
+  @override
+  String get stationHoursSunday => 'Sunday';
+
+  @override
+  String get customerManagementTitle => 'Customer Management';
+
+  @override
+  String get customerManagementAllCustomers => 'All Customers';
+
+  @override
+  String get customerManagementSearchHint => 'Search customers...';
+
+  @override
+  String get customerManagementNoCustomers => 'No customers found';
+
+  @override
+  String get customerManagementTotalPurchases => 'Total Purchases';
+
+  @override
+  String get customerManagementTotalSpent => 'Total Spent';
+
+  @override
+  String get promotionsTitle => 'Promotions & Discounts';
+
+  @override
+  String get promotionsAddPromotion => 'Add Promotion';
+
+  @override
+  String get promotionsEditPromotion => 'Edit Promotion';
+
+  @override
+  String get promotionsTitleLabel => 'Title';
+
+  @override
+  String get promotionsDescription => 'Description';
+
+  @override
+  String get promotionsDiscountPercent => 'Discount (%)';
+
+  @override
+  String get promotionsDiscountAmount => 'Discount Amount (KES)';
+
+  @override
+  String get promotionsStartDate => 'Start Date';
+
+  @override
+  String get promotionsEndDate => 'End Date';
+
+  @override
+  String get promotionsActive => 'Active';
+
+  @override
+  String get promotionsNoPromotions => 'No promotions found';
+
+  @override
+  String get promotionsDeleteTitle => 'Delete Promotion';
+
+  @override
+  String get promotionsDeleteMessage =>
+      'Are you sure you want to delete this promotion?';
+
+  @override
+  String get paymentMethodsTitle => 'Payment Methods';
+
+  @override
+  String get paymentMethodsAddMethod => 'Add Payment Method';
+
+  @override
+  String get paymentMethodsEditMethod => 'Edit Payment Method';
+
+  @override
+  String get paymentMethodsMethodName => 'Method Name';
+
+  @override
+  String get paymentMethodsEnabled => 'Enabled';
+
+  @override
+  String get paymentMethodsAccountDetails => 'Account Details';
+
+  @override
+  String get paymentMethodsNoMethods => 'No payment methods found';
+
+  @override
+  String get paymentMethodsDeleteTitle => 'Delete Payment Method';
+
+  @override
+  String get paymentMethodsDeleteMessage =>
+      'Are you sure you want to delete this payment method?';
 }

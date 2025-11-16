@@ -168,6 +168,18 @@ abstract class AppLocalizations {
   /// **'Settings'**
   String get navSettings;
 
+  /// No description provided for @navStations.
+  ///
+  /// In en, this message translates to:
+  /// **'Stations'**
+  String get navStations;
+
+  /// No description provided for @navProfile.
+  ///
+  /// In en, this message translates to:
+  /// **'Profile'**
+  String get navProfile;
+
   /// No description provided for @commonCancel.
   ///
   /// In en, this message translates to:
@@ -251,6 +263,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Settings'**
   String get settingsTitle;
+
+  /// No description provided for @settingsSectionProfile.
+  ///
+  /// In en, this message translates to:
+  /// **'Profile'**
+  String get settingsSectionProfile;
 
   /// No description provided for @settingsSectionGeneral.
   ///
@@ -372,11 +390,53 @@ abstract class AppLocalizations {
   /// **'Select Theme'**
   String get settingsThemeDialogTitle;
 
+  /// No description provided for @settingsProfileTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Profile'**
+  String get settingsProfileTitle;
+
+  /// No description provided for @settingsProfileSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'View and edit your profile'**
+  String get settingsProfileSubtitle;
+
   /// No description provided for @settingsProfileEditTitle.
   ///
   /// In en, this message translates to:
   /// **'Edit Profile'**
   String get settingsProfileEditTitle;
+
+  /// No description provided for @settingsProfileEditButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit Profile'**
+  String get settingsProfileEditButton;
+
+  /// No description provided for @settingsProfileInfo.
+  ///
+  /// In en, this message translates to:
+  /// **'Profile Information'**
+  String get settingsProfileInfo;
+
+  /// No description provided for @settingsProfilePhone.
+  ///
+  /// In en, this message translates to:
+  /// **'Phone'**
+  String get settingsProfilePhone;
+
+  /// No description provided for @settingsProfileRole.
+  ///
+  /// In en, this message translates to:
+  /// **'Role'**
+  String get settingsProfileRole;
+
+  /// No description provided for @settingsProfileGoToSettings.
+  ///
+  /// In en, this message translates to:
+  /// **'Manage app settings'**
+  String get settingsProfileGoToSettings;
 
   /// No description provided for @settingsProfileFillAllFields.
   ///
@@ -1056,11 +1116,1037 @@ abstract class AppLocalizations {
   /// **'Update Prices'**
   String get dashboardQuickActionUpdatePrices;
 
+  /// No description provided for @dashboardTitleStationOwner.
+  ///
+  /// In en, this message translates to:
+  /// **'Station Owner Dashboard'**
+  String get dashboardTitleStationOwner;
+
+  /// No description provided for @dashboardTitleCustomer.
+  ///
+  /// In en, this message translates to:
+  /// **'My Dashboard'**
+  String get dashboardTitleCustomer;
+
+  /// No description provided for @dashboardWelcome.
+  ///
+  /// In en, this message translates to:
+  /// **'Welcome, {name}'**
+  String dashboardWelcome(String name);
+
+  /// No description provided for @dashboardStatTotalSpent.
+  ///
+  /// In en, this message translates to:
+  /// **'Total Spent'**
+  String get dashboardStatTotalSpent;
+
+  /// No description provided for @dashboardStatFuelPurchased.
+  ///
+  /// In en, this message translates to:
+  /// **'Fuel Purchased'**
+  String get dashboardStatFuelPurchased;
+
+  /// No description provided for @dashboardStatTotalPurchases.
+  ///
+  /// In en, this message translates to:
+  /// **'Total Purchases'**
+  String get dashboardStatTotalPurchases;
+
+  /// No description provided for @dashboardStatAveragePurchase.
+  ///
+  /// In en, this message translates to:
+  /// **'Avg Purchase'**
+  String get dashboardStatAveragePurchase;
+
+  /// No description provided for @dashboardStatStations.
+  ///
+  /// In en, this message translates to:
+  /// **'Stations'**
+  String get dashboardStatStations;
+
+  /// No description provided for @dashboardPurchaseHistory.
+  ///
+  /// In en, this message translates to:
+  /// **'Purchase History'**
+  String get dashboardPurchaseHistory;
+
+  /// No description provided for @dashboardNoPurchases.
+  ///
+  /// In en, this message translates to:
+  /// **'No purchases yet'**
+  String get dashboardNoPurchases;
+
+  /// No description provided for @dashboardNoPurchasesHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Start purchasing fuel to see your history here'**
+  String get dashboardNoPurchasesHint;
+
+  /// No description provided for @commonViewAll.
+  ///
+  /// In en, this message translates to:
+  /// **'View All'**
+  String get commonViewAll;
+
+  /// No description provided for @loginTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Welcome Back'**
+  String get loginTitle;
+
+  /// No description provided for @loginSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign in to continue'**
+  String get loginSubtitle;
+
+  /// No description provided for @loginEmailLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Email'**
+  String get loginEmailLabel;
+
+  /// No description provided for @loginEmailHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter your email'**
+  String get loginEmailHint;
+
+  /// No description provided for @loginEmailRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'Email is required'**
+  String get loginEmailRequired;
+
+  /// No description provided for @loginEmailInvalid.
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter a valid email'**
+  String get loginEmailInvalid;
+
+  /// No description provided for @loginPasswordLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Password'**
+  String get loginPasswordLabel;
+
+  /// No description provided for @loginPasswordHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter your password'**
+  String get loginPasswordHint;
+
+  /// No description provided for @loginPasswordRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'Password is required'**
+  String get loginPasswordRequired;
+
+  /// No description provided for @loginPasswordMinLength.
+  ///
+  /// In en, this message translates to:
+  /// **'Password must be at least 6 characters'**
+  String get loginPasswordMinLength;
+
+  /// No description provided for @loginButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign In'**
+  String get loginButton;
+
+  /// No description provided for @loginNoAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Don\'t have an account?'**
+  String get loginNoAccount;
+
+  /// No description provided for @loginRegisterLink.
+  ///
+  /// In en, this message translates to:
+  /// **'Register'**
+  String get loginRegisterLink;
+
+  /// No description provided for @loginErrorInvalidCredentials.
+  ///
+  /// In en, this message translates to:
+  /// **'Invalid email or password'**
+  String get loginErrorInvalidCredentials;
+
+  /// No description provided for @loginDemoAccounts.
+  ///
+  /// In en, this message translates to:
+  /// **'Demo Accounts'**
+  String get loginDemoAccounts;
+
+  /// No description provided for @loginDemoOwner.
+  ///
+  /// In en, this message translates to:
+  /// **'Owner: owner@station.com / owner123'**
+  String get loginDemoOwner;
+
+  /// No description provided for @loginDemoCustomer.
+  ///
+  /// In en, this message translates to:
+  /// **'Customer: customer@example.com / customer123'**
+  String get loginDemoCustomer;
+
+  /// No description provided for @registerTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Create Account'**
+  String get registerTitle;
+
+  /// No description provided for @registerSelectRole.
+  ///
+  /// In en, this message translates to:
+  /// **'Select Your Role'**
+  String get registerSelectRole;
+
+  /// No description provided for @registerRoleCustomer.
+  ///
+  /// In en, this message translates to:
+  /// **'Customer'**
+  String get registerRoleCustomer;
+
+  /// No description provided for @registerRoleStationOwner.
+  ///
+  /// In en, this message translates to:
+  /// **'Station Owner'**
+  String get registerRoleStationOwner;
+
+  /// No description provided for @registerFullNameLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Full Name'**
+  String get registerFullNameLabel;
+
+  /// No description provided for @registerFullNameHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter your full name'**
+  String get registerFullNameHint;
+
+  /// No description provided for @registerFullNameRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'Full name is required'**
+  String get registerFullNameRequired;
+
+  /// No description provided for @registerEmailLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Email'**
+  String get registerEmailLabel;
+
+  /// No description provided for @registerEmailHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter your email'**
+  String get registerEmailHint;
+
+  /// No description provided for @registerEmailRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'Email is required'**
+  String get registerEmailRequired;
+
+  /// No description provided for @registerEmailInvalid.
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter a valid email'**
+  String get registerEmailInvalid;
+
+  /// No description provided for @registerPhoneLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Phone'**
+  String get registerPhoneLabel;
+
+  /// No description provided for @registerPhoneHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter your phone number'**
+  String get registerPhoneHint;
+
+  /// No description provided for @registerPhoneRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'Phone is required'**
+  String get registerPhoneRequired;
+
+  /// No description provided for @registerPasswordLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Password'**
+  String get registerPasswordLabel;
+
+  /// No description provided for @registerPasswordHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter your password'**
+  String get registerPasswordHint;
+
+  /// No description provided for @registerPasswordRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'Password is required'**
+  String get registerPasswordRequired;
+
+  /// No description provided for @registerPasswordMinLength.
+  ///
+  /// In en, this message translates to:
+  /// **'Password must be at least 6 characters'**
+  String get registerPasswordMinLength;
+
+  /// No description provided for @registerConfirmPasswordLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Confirm Password'**
+  String get registerConfirmPasswordLabel;
+
+  /// No description provided for @registerConfirmPasswordHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Confirm your password'**
+  String get registerConfirmPasswordHint;
+
+  /// No description provided for @registerConfirmPasswordRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'Please confirm your password'**
+  String get registerConfirmPasswordRequired;
+
+  /// No description provided for @registerConfirmPasswordMismatch.
+  ///
+  /// In en, this message translates to:
+  /// **'Passwords do not match'**
+  String get registerConfirmPasswordMismatch;
+
+  /// No description provided for @registerButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Register'**
+  String get registerButton;
+
+  /// No description provided for @registerHaveAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Already have an account?'**
+  String get registerHaveAccount;
+
+  /// No description provided for @registerLoginLink.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign In'**
+  String get registerLoginLink;
+
+  /// No description provided for @registerErrorEmailExists.
+  ///
+  /// In en, this message translates to:
+  /// **'Email already registered'**
+  String get registerErrorEmailExists;
+
+  /// No description provided for @settingsLogoutTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Logout'**
+  String get settingsLogoutTitle;
+
+  /// No description provided for @settingsLogoutMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Are you sure you want to logout?'**
+  String get settingsLogoutMessage;
+
+  /// No description provided for @settingsLogoutButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Logout'**
+  String get settingsLogoutButton;
+
+  /// No description provided for @manageStationsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Manage Stations'**
+  String get manageStationsTitle;
+
+  /// No description provided for @manageStationsComingSoon.
+  ///
+  /// In en, this message translates to:
+  /// **'Station management coming soon'**
+  String get manageStationsComingSoon;
+
+  /// No description provided for @managePricesTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Manage Prices'**
+  String get managePricesTitle;
+
+  /// No description provided for @managePricesComingSoon.
+  ///
+  /// In en, this message translates to:
+  /// **'Price management coming soon'**
+  String get managePricesComingSoon;
+
+  /// No description provided for @stationsViewMyStation.
+  ///
+  /// In en, this message translates to:
+  /// **'My Station'**
+  String get stationsViewMyStation;
+
+  /// No description provided for @stationsViewAllStations.
+  ///
+  /// In en, this message translates to:
+  /// **'All Stations'**
+  String get stationsViewAllStations;
+
+  /// No description provided for @stationsViewSearchHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Search stations...'**
+  String get stationsViewSearchHint;
+
+  /// No description provided for @stationsViewAddStation.
+  ///
+  /// In en, this message translates to:
+  /// **'Add Station'**
+  String get stationsViewAddStation;
+
   /// No description provided for @receiptPaymentSuccessfulBanner.
   ///
   /// In en, this message translates to:
   /// **'Payment Successful'**
   String get receiptPaymentSuccessfulBanner;
+
+  /// No description provided for @commonView.
+  ///
+  /// In en, this message translates to:
+  /// **'View'**
+  String get commonView;
+
+  /// No description provided for @commonEdit.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit'**
+  String get commonEdit;
+
+  /// No description provided for @commonDelete.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete'**
+  String get commonDelete;
+
+  /// No description provided for @manageStationsSearchHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Search stations...'**
+  String get manageStationsSearchHint;
+
+  /// No description provided for @manageStationsNoStations.
+  ///
+  /// In en, this message translates to:
+  /// **'No stations found'**
+  String get manageStationsNoStations;
+
+  /// No description provided for @manageStationsAddStation.
+  ///
+  /// In en, this message translates to:
+  /// **'Add Station'**
+  String get manageStationsAddStation;
+
+  /// No description provided for @manageStationsEditStation.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit Station'**
+  String get manageStationsEditStation;
+
+  /// No description provided for @manageStationsAddress.
+  ///
+  /// In en, this message translates to:
+  /// **'Address'**
+  String get manageStationsAddress;
+
+  /// No description provided for @manageStationsLocation.
+  ///
+  /// In en, this message translates to:
+  /// **'Location'**
+  String get manageStationsLocation;
+
+  /// No description provided for @manageStationsSelectLocation.
+  ///
+  /// In en, this message translates to:
+  /// **'Select Location on Map'**
+  String get manageStationsSelectLocation;
+
+  /// No description provided for @manageStationsActive.
+  ///
+  /// In en, this message translates to:
+  /// **'Active'**
+  String get manageStationsActive;
+
+  /// No description provided for @manageStationsDeleteTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete Station'**
+  String get manageStationsDeleteTitle;
+
+  /// No description provided for @manageStationsDeleteMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Are you sure you want to delete {name}?'**
+  String manageStationsDeleteMessage(String name);
+
+  /// No description provided for @manageStationsDeleteSuccess.
+  ///
+  /// In en, this message translates to:
+  /// **'Station deleted successfully'**
+  String get manageStationsDeleteSuccess;
+
+  /// No description provided for @managePricesUpdatePetrol.
+  ///
+  /// In en, this message translates to:
+  /// **'Update Petrol Price'**
+  String get managePricesUpdatePetrol;
+
+  /// No description provided for @managePricesUpdateDiesel.
+  ///
+  /// In en, this message translates to:
+  /// **'Update Diesel Price'**
+  String get managePricesUpdateDiesel;
+
+  /// No description provided for @managePricesPriceHistory.
+  ///
+  /// In en, this message translates to:
+  /// **'Price History'**
+  String get managePricesPriceHistory;
+
+  /// No description provided for @managePricesBulkUpdate.
+  ///
+  /// In en, this message translates to:
+  /// **'Bulk Update'**
+  String get managePricesBulkUpdate;
+
+  /// No description provided for @managePricesSelectStations.
+  ///
+  /// In en, this message translates to:
+  /// **'Select Stations'**
+  String get managePricesSelectStations;
+
+  /// No description provided for @managePricesNewPrice.
+  ///
+  /// In en, this message translates to:
+  /// **'New Price (KES)'**
+  String get managePricesNewPrice;
+
+  /// No description provided for @managePricesUpdateSuccess.
+  ///
+  /// In en, this message translates to:
+  /// **'Price updated successfully'**
+  String get managePricesUpdateSuccess;
+
+  /// No description provided for @managePricesHistoryEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'No price history available'**
+  String get managePricesHistoryEmpty;
+
+  /// No description provided for @receiptDetailsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Receipt Details'**
+  String get receiptDetailsTitle;
+
+  /// No description provided for @receiptDetailsTransactionId.
+  ///
+  /// In en, this message translates to:
+  /// **'Transaction ID'**
+  String get receiptDetailsTransactionId;
+
+  /// No description provided for @receiptDetailsDate.
+  ///
+  /// In en, this message translates to:
+  /// **'Date'**
+  String get receiptDetailsDate;
+
+  /// No description provided for @receiptDetailsStation.
+  ///
+  /// In en, this message translates to:
+  /// **'Station'**
+  String get receiptDetailsStation;
+
+  /// No description provided for @receiptDetailsFuelType.
+  ///
+  /// In en, this message translates to:
+  /// **'Fuel Type'**
+  String get receiptDetailsFuelType;
+
+  /// No description provided for @receiptDetailsQuantity.
+  ///
+  /// In en, this message translates to:
+  /// **'Quantity'**
+  String get receiptDetailsQuantity;
+
+  /// No description provided for @receiptDetailsPricePerLiter.
+  ///
+  /// In en, this message translates to:
+  /// **'Price per Liter'**
+  String get receiptDetailsPricePerLiter;
+
+  /// No description provided for @receiptDetailsTotalAmount.
+  ///
+  /// In en, this message translates to:
+  /// **'Total Amount'**
+  String get receiptDetailsTotalAmount;
+
+  /// No description provided for @receiptDetailsPaymentMethod.
+  ///
+  /// In en, this message translates to:
+  /// **'Payment Method'**
+  String get receiptDetailsPaymentMethod;
+
+  /// No description provided for @receiptDetailsCustomer.
+  ///
+  /// In en, this message translates to:
+  /// **'Customer'**
+  String get receiptDetailsCustomer;
+
+  /// No description provided for @reportsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Reports & Analytics'**
+  String get reportsTitle;
+
+  /// No description provided for @reportsExportPDF.
+  ///
+  /// In en, this message translates to:
+  /// **'Export as PDF'**
+  String get reportsExportPDF;
+
+  /// No description provided for @reportsExportExcel.
+  ///
+  /// In en, this message translates to:
+  /// **'Export as Excel'**
+  String get reportsExportExcel;
+
+  /// No description provided for @reportsSalesReport.
+  ///
+  /// In en, this message translates to:
+  /// **'Sales Report'**
+  String get reportsSalesReport;
+
+  /// No description provided for @reportsFuelConsumption.
+  ///
+  /// In en, this message translates to:
+  /// **'Fuel Consumption'**
+  String get reportsFuelConsumption;
+
+  /// No description provided for @reportsCustomerAnalytics.
+  ///
+  /// In en, this message translates to:
+  /// **'Customer Analytics'**
+  String get reportsCustomerAnalytics;
+
+  /// No description provided for @reportsRevenueTrends.
+  ///
+  /// In en, this message translates to:
+  /// **'Revenue Trends'**
+  String get reportsRevenueTrends;
+
+  /// No description provided for @reportsSelectPeriod.
+  ///
+  /// In en, this message translates to:
+  /// **'Select Period'**
+  String get reportsSelectPeriod;
+
+  /// No description provided for @reportsGenerate.
+  ///
+  /// In en, this message translates to:
+  /// **'Generate Report'**
+  String get reportsGenerate;
+
+  /// No description provided for @stockManagementTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Stock Management'**
+  String get stockManagementTitle;
+
+  /// No description provided for @stockManagementTrackStock.
+  ///
+  /// In en, this message translates to:
+  /// **'Track Stock'**
+  String get stockManagementTrackStock;
+
+  /// No description provided for @stockManagementLowStockAlerts.
+  ///
+  /// In en, this message translates to:
+  /// **'Low Stock Alerts'**
+  String get stockManagementLowStockAlerts;
+
+  /// No description provided for @stockManagementStockHistory.
+  ///
+  /// In en, this message translates to:
+  /// **'Stock History'**
+  String get stockManagementStockHistory;
+
+  /// No description provided for @stockManagementReorder.
+  ///
+  /// In en, this message translates to:
+  /// **'Reorder Management'**
+  String get stockManagementReorder;
+
+  /// No description provided for @stockManagementCurrentStock.
+  ///
+  /// In en, this message translates to:
+  /// **'Current Stock'**
+  String get stockManagementCurrentStock;
+
+  /// No description provided for @stockManagementMinThreshold.
+  ///
+  /// In en, this message translates to:
+  /// **'Minimum Threshold'**
+  String get stockManagementMinThreshold;
+
+  /// No description provided for @stockManagementUpdateStock.
+  ///
+  /// In en, this message translates to:
+  /// **'Update Stock'**
+  String get stockManagementUpdateStock;
+
+  /// No description provided for @stockManagementStockUpdated.
+  ///
+  /// In en, this message translates to:
+  /// **'Stock updated successfully'**
+  String get stockManagementStockUpdated;
+
+  /// No description provided for @stockManagementLowStock.
+  ///
+  /// In en, this message translates to:
+  /// **'Low Stock Alert'**
+  String get stockManagementLowStock;
+
+  /// No description provided for @stockManagementReorderLevel.
+  ///
+  /// In en, this message translates to:
+  /// **'Reorder Level'**
+  String get stockManagementReorderLevel;
+
+  /// No description provided for @employeeManagementTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Employee Management'**
+  String get employeeManagementTitle;
+
+  /// No description provided for @employeeManagementAddEmployee.
+  ///
+  /// In en, this message translates to:
+  /// **'Add Employee'**
+  String get employeeManagementAddEmployee;
+
+  /// No description provided for @employeeManagementEditEmployee.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit Employee'**
+  String get employeeManagementEditEmployee;
+
+  /// No description provided for @employeeManagementFullName.
+  ///
+  /// In en, this message translates to:
+  /// **'Full Name'**
+  String get employeeManagementFullName;
+
+  /// No description provided for @employeeManagementEmail.
+  ///
+  /// In en, this message translates to:
+  /// **'Email'**
+  String get employeeManagementEmail;
+
+  /// No description provided for @employeeManagementPhone.
+  ///
+  /// In en, this message translates to:
+  /// **'Phone'**
+  String get employeeManagementPhone;
+
+  /// No description provided for @employeeManagementRole.
+  ///
+  /// In en, this message translates to:
+  /// **'Role'**
+  String get employeeManagementRole;
+
+  /// No description provided for @employeeManagementActive.
+  ///
+  /// In en, this message translates to:
+  /// **'Active'**
+  String get employeeManagementActive;
+
+  /// No description provided for @employeeManagementNoEmployees.
+  ///
+  /// In en, this message translates to:
+  /// **'No employees found'**
+  String get employeeManagementNoEmployees;
+
+  /// No description provided for @employeeManagementDeleteTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete Employee'**
+  String get employeeManagementDeleteTitle;
+
+  /// No description provided for @employeeManagementDeleteMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Are you sure you want to delete {name}?'**
+  String employeeManagementDeleteMessage(String name);
+
+  /// No description provided for @stationHoursTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Station Hours'**
+  String get stationHoursTitle;
+
+  /// No description provided for @stationHoursManageHours.
+  ///
+  /// In en, this message translates to:
+  /// **'Manage Hours'**
+  String get stationHoursManageHours;
+
+  /// No description provided for @stationHoursDay.
+  ///
+  /// In en, this message translates to:
+  /// **'Day'**
+  String get stationHoursDay;
+
+  /// No description provided for @stationHoursOpenTime.
+  ///
+  /// In en, this message translates to:
+  /// **'Open Time'**
+  String get stationHoursOpenTime;
+
+  /// No description provided for @stationHoursCloseTime.
+  ///
+  /// In en, this message translates to:
+  /// **'Close Time'**
+  String get stationHoursCloseTime;
+
+  /// No description provided for @stationHours24Hours.
+  ///
+  /// In en, this message translates to:
+  /// **'24 Hours'**
+  String get stationHours24Hours;
+
+  /// No description provided for @stationHoursClosed.
+  ///
+  /// In en, this message translates to:
+  /// **'Closed'**
+  String get stationHoursClosed;
+
+  /// No description provided for @stationHoursMonday.
+  ///
+  /// In en, this message translates to:
+  /// **'Monday'**
+  String get stationHoursMonday;
+
+  /// No description provided for @stationHoursTuesday.
+  ///
+  /// In en, this message translates to:
+  /// **'Tuesday'**
+  String get stationHoursTuesday;
+
+  /// No description provided for @stationHoursWednesday.
+  ///
+  /// In en, this message translates to:
+  /// **'Wednesday'**
+  String get stationHoursWednesday;
+
+  /// No description provided for @stationHoursThursday.
+  ///
+  /// In en, this message translates to:
+  /// **'Thursday'**
+  String get stationHoursThursday;
+
+  /// No description provided for @stationHoursFriday.
+  ///
+  /// In en, this message translates to:
+  /// **'Friday'**
+  String get stationHoursFriday;
+
+  /// No description provided for @stationHoursSaturday.
+  ///
+  /// In en, this message translates to:
+  /// **'Saturday'**
+  String get stationHoursSaturday;
+
+  /// No description provided for @stationHoursSunday.
+  ///
+  /// In en, this message translates to:
+  /// **'Sunday'**
+  String get stationHoursSunday;
+
+  /// No description provided for @customerManagementTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Customer Management'**
+  String get customerManagementTitle;
+
+  /// No description provided for @customerManagementAllCustomers.
+  ///
+  /// In en, this message translates to:
+  /// **'All Customers'**
+  String get customerManagementAllCustomers;
+
+  /// No description provided for @customerManagementSearchHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Search customers...'**
+  String get customerManagementSearchHint;
+
+  /// No description provided for @customerManagementNoCustomers.
+  ///
+  /// In en, this message translates to:
+  /// **'No customers found'**
+  String get customerManagementNoCustomers;
+
+  /// No description provided for @customerManagementTotalPurchases.
+  ///
+  /// In en, this message translates to:
+  /// **'Total Purchases'**
+  String get customerManagementTotalPurchases;
+
+  /// No description provided for @customerManagementTotalSpent.
+  ///
+  /// In en, this message translates to:
+  /// **'Total Spent'**
+  String get customerManagementTotalSpent;
+
+  /// No description provided for @promotionsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Promotions & Discounts'**
+  String get promotionsTitle;
+
+  /// No description provided for @promotionsAddPromotion.
+  ///
+  /// In en, this message translates to:
+  /// **'Add Promotion'**
+  String get promotionsAddPromotion;
+
+  /// No description provided for @promotionsEditPromotion.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit Promotion'**
+  String get promotionsEditPromotion;
+
+  /// No description provided for @promotionsTitleLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Title'**
+  String get promotionsTitleLabel;
+
+  /// No description provided for @promotionsDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Description'**
+  String get promotionsDescription;
+
+  /// No description provided for @promotionsDiscountPercent.
+  ///
+  /// In en, this message translates to:
+  /// **'Discount (%)'**
+  String get promotionsDiscountPercent;
+
+  /// No description provided for @promotionsDiscountAmount.
+  ///
+  /// In en, this message translates to:
+  /// **'Discount Amount (KES)'**
+  String get promotionsDiscountAmount;
+
+  /// No description provided for @promotionsStartDate.
+  ///
+  /// In en, this message translates to:
+  /// **'Start Date'**
+  String get promotionsStartDate;
+
+  /// No description provided for @promotionsEndDate.
+  ///
+  /// In en, this message translates to:
+  /// **'End Date'**
+  String get promotionsEndDate;
+
+  /// No description provided for @promotionsActive.
+  ///
+  /// In en, this message translates to:
+  /// **'Active'**
+  String get promotionsActive;
+
+  /// No description provided for @promotionsNoPromotions.
+  ///
+  /// In en, this message translates to:
+  /// **'No promotions found'**
+  String get promotionsNoPromotions;
+
+  /// No description provided for @promotionsDeleteTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete Promotion'**
+  String get promotionsDeleteTitle;
+
+  /// No description provided for @promotionsDeleteMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Are you sure you want to delete this promotion?'**
+  String get promotionsDeleteMessage;
+
+  /// No description provided for @paymentMethodsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Payment Methods'**
+  String get paymentMethodsTitle;
+
+  /// No description provided for @paymentMethodsAddMethod.
+  ///
+  /// In en, this message translates to:
+  /// **'Add Payment Method'**
+  String get paymentMethodsAddMethod;
+
+  /// No description provided for @paymentMethodsEditMethod.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit Payment Method'**
+  String get paymentMethodsEditMethod;
+
+  /// No description provided for @paymentMethodsMethodName.
+  ///
+  /// In en, this message translates to:
+  /// **'Method Name'**
+  String get paymentMethodsMethodName;
+
+  /// No description provided for @paymentMethodsEnabled.
+  ///
+  /// In en, this message translates to:
+  /// **'Enabled'**
+  String get paymentMethodsEnabled;
+
+  /// No description provided for @paymentMethodsAccountDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Account Details'**
+  String get paymentMethodsAccountDetails;
+
+  /// No description provided for @paymentMethodsNoMethods.
+  ///
+  /// In en, this message translates to:
+  /// **'No payment methods found'**
+  String get paymentMethodsNoMethods;
+
+  /// No description provided for @paymentMethodsDeleteTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete Payment Method'**
+  String get paymentMethodsDeleteTitle;
+
+  /// No description provided for @paymentMethodsDeleteMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Are you sure you want to delete this payment method?'**
+  String get paymentMethodsDeleteMessage;
 }
 
 class _AppLocalizationsDelegate
