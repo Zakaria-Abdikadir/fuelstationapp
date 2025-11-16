@@ -63,15 +63,6 @@ Stock usage analytics
 
 Customer activity reports
 
-🗂 Project Structure
-lib/
- ├── models/
- ├── screens/
- ├── services/
- ├── widgets/
- ├── l10n/
- ├── db/
- └── main.dart
 
 🌍 Localization
 
@@ -113,4 +104,4 @@ flutter run
 
 📄 License
 
-This project is open-source. You may modify and reuse it.
+This project is open-source. You may modify and reuse it.**
