@@ -1,16 +1,116 @@
-# fuelstationapp
+🚀 Fuel Station Management App
 
-A new Flutter project.
+A comprehensive Flutter application built to help fuel station owners manage sales, employees, customers, promotions, stock, receipts, and analytics — all in one place.
 
-## Getting Started
+📱 Features
+🔑 Authentication
 
-This project is a starting point for a Flutter application.
+User registration
 
-A few resources to get you started if this is your first Flutter project:
+Login system
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Role-based access (Owner, Employee, Customer)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+🏪 Station Management
+
+Add and update fuel stations
+
+Manage station hours
+
+Track price changes
+
+Handle stock and fuel inventory
+
+👨‍💼 Employee Management
+
+Add, edit, or remove employees
+
+Assign roles & permissions
+
+Track activity
+
+💳 Payment & Receipts
+
+Multiple payment methods
+
+Receipt generation
+
+Receipt details screen
+
+Payment history tracking
+
+🛒 Customer Management
+
+Customer dashboard
+
+Purchase history
+
+Reward programs (optional)
+
+🔥 Promotions & Discounts
+
+Create and manage fuel promotions
+
+Apply discounts
+
+Track promotional performance
+
+📊 Reports & Analytics
+
+Sales charts
+
+Stock usage analytics
+
+Customer activity reports
+
+🗂 Project Structure
+lib/
+ ├── models/
+ ├── screens/
+ ├── services/
+ ├── widgets/
+ ├── l10n/
+ ├── db/
+ └── main.dart
+
+🌍 Localization
+
+Supports multiple languages:
+
+English
+
+French
+
+Spanish
+
+Swahili
+
+🛠 Tech Stack
+
+Flutter
+
+Dart
+
+SQLite (or your DB choice)
+
+Provider (State Management)
+
+▶️ Getting Started
+
+Clone the repo:
+
+git clone https://github.com/Zakaria-Abdikadir/fuelstationapp.git
+
+
+Install packages:
+
+flutter pub get
+
+
+Run the application:
+
+flutter run
+
+📄 License
+
+This project is open-source. You may modify and reuse it.
